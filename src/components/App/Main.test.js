@@ -1,12 +1,12 @@
-import React       from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
-import { App }     from '.';
+import { Main } from '.';
 
-describe(App, () => {
+describe(Main, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<App />);
+    component = shallow(<Main />);
   });
 
   it('renders properly', () => {

@@ -1,17 +1,14 @@
 import React from 'react';
-import { Header, Main } from '.';
 
-export default class App extends React.Component {
+export default class UserPage extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
     return (
       <div>
-        <Header />
-        <Main />
+        <h2>User Page</h2>
       </div>
     );
   }

@@ -1,17 +1,14 @@
 import React from 'react';
-import { Header, Main } from '.';
 
-export default class App extends React.Component {
+export default class VideoStats extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
     return (
       <div>
-        <Header />
-        <Main />
+        <p>Video stats go here...</p>
       </div>
     );
   }

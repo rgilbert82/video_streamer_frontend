@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class VideoMain extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, 'Video main profile goes here...')));
+
+
+  }} renders properly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <VideoMain />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <p>
+        Video main profile goes here...
+</p>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Video main profile goes here...",
+      },
+      "ref": null,
+      "rendered": "Video main profile goes here...",
+      "type": "p",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <p>
+          Video main profile goes here...
+</p>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Video main profile goes here...",
+        },
+        "ref": null,
+        "rendered": "Video main profile goes here...",
+        "type": "p",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
