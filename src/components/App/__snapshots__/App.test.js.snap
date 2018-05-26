@@ -4,13 +4,65 @@ exports[`class App extends _react2.default.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      message: false,
+      loggedIn: false,
+      currentUser: {} };
+
+
+    this.googleLogin = this.googleLogin.bind(this);
+    this.googleLogout = this.googleLogout.bind(this);
+    this.loginFailure = this.loginFailure.bind(this);
+    this.displayMessage = this.displayMessage.bind(this);
+    this.closeMessage = this.closeMessage.bind(this);
+  }
+
+  displayMessage(message) {
+    this.setState({ message: message });
+  }
+
+  closeMessage() {
+    this.setState({ message: false });
+  }
+
+  googleLogin(googleUser) {
+    const profile = {
+      name: googleUser.profileObj.name,
+      email: googleUser.profileObj.email,
+      imageUrl: googleUser.profileObj.imageUrl,
+      accessToken: googleUser.accessToken };
+
+
+    this.setState({ loggedIn: true, currentUser: profile });
+  }
+
+  googleLogout() {
+    this.setState({ loggedIn: false, currentUser: {} });
+  }
+
+  loginFailure() {
+    this.displayMessage('There was an error logging in to your Google account.');
   }
 
   render() {
+    let messageBox;
+
+    if (this.state.message) {
+      messageBox = _react2.default.createElement(_Misc.MessageBox, { message: this.state.message, closeMessage: this.closeMessage, __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this });
+    }
+
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this },
-        _react2.default.createElement(_.Header, { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }),
-        _react2.default.createElement(_.Main, { __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this })));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 57 }, __self: this },
+        _react2.default.createElement(_.Header, {
+          loggedIn: this.state.loggedIn,
+          googleLogin: this.googleLogin,
+          googleLogout: this.googleLogout,
+          loginFailure: this.loginFailure, __source: { fileName: _jsxFileName, lineNumber: 58 }, __self: this }),
+
+
+        messageBox,
+
+        _react2.default.createElement(_.Main, { __source: { fileName: _jsxFileName, lineNumber: 67 }, __self: this })));
 
 
   }} renders properly 1`] = `
@@ -31,7 +83,13 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header />,
+        <Header
+          googleLogin={[Function]}
+          googleLogout={[Function]}
+          loggedIn={false}
+          loginFailure={[Function]}
+/>,
+        undefined,
         <Main />,
       ],
     },
@@ -41,11 +99,17 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "googleLogin": [Function],
+          "googleLogout": [Function],
+          "loggedIn": false,
+          "loginFailure": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -65,7 +129,13 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header />,
+          <Header
+            googleLogin={[Function]}
+            googleLogout={[Function]}
+            loggedIn={false}
+            loginFailure={[Function]}
+/>,
+          undefined,
           <Main />,
         ],
       },
@@ -75,11 +145,17 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "googleLogin": [Function],
+            "googleLogout": [Function],
+            "loggedIn": false,
+            "loginFailure": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
+        undefined,
         Object {
           "instance": null,
           "key": undefined,

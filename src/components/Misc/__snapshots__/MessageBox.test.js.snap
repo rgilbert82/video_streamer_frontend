@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class MessageBox extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.closeMessage = this.closeMessage.bind(this);
+  }
+
+  closeMessage(e) {
+    e.preventDefault();
+    this.props.closeMessage();
+  }
+
+  render() {
+    return (
+      _react2.default.createElement(_reactBootstrap.Alert, { className: 'message_window', __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this }, this.props.message),
+        _react2.default.createElement('a', { onClick: this.closeMessage, href: '', __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, '\\xD7')));
+
+
+  }} renders properly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MessageBox />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "bsClass": "alert",
+      "bsStyle": "info",
+      "children": Array [
+        <p />,
+        <a
+          href=""
+          onClick={[Function]}
+>
+          ×
+</a>,
+      ],
+      "className": "message_window",
+      "closeLabel": "Close alert",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "×",
+          "href": "",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "×",
+        "type": "a",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "bsClass": "alert",
+        "bsStyle": "info",
+        "children": Array [
+          <p />,
+          <a
+            href=""
+            onClick={[Function]}
+>
+            ×
+</a>,
+        ],
+        "className": "message_window",
+        "closeLabel": "Close alert",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "×",
+            "href": "",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "×",
+          "type": "a",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

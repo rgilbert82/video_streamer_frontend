@@ -6,9 +6,32 @@ exports[`class Header extends _react2.default.Component {
   }
 
   render() {
+    let googleButton;
+
+    if (this.props.loggedIn) {
+      googleButton =
+      _react2.default.createElement(_reactGoogleLogin.GoogleLogout, {
+        buttonText: 'Logout',
+        onLogoutSuccess: this.props.googleLogout, __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this });
+
+
+    } else {
+      googleButton =
+      _react2.default.createElement(_reactGoogleLogin.GoogleLogin, {
+        clientId: process.env.REACT_APP_CLIENT_ID,
+        isSignedIn: 'true',
+        buttonText: 'Login with Google',
+        onSuccess: this.props.googleLogin,
+        onFailure: this.props.loginFailure,
+        scope: 'https://www.googleapis.com/auth/youtube', __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this });
+
+
+    }
+
     return (
-      _react2.default.createElement('header', { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
-        _react2.default.createElement('h1', { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, 'NASA TV')));
+      _react2.default.createElement('header', { __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this },
+        _react2.default.createElement('h1', { __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this }, 'NASA TV'),
+        googleButton));
 
 
   }} renders properly 1`] = `
@@ -28,36 +51,37 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
-        NASA TV
-</h1>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "NASA TV",
-      },
-      "ref": null,
-      "rendered": "NASA TV",
-      "type": "h1",
-    },
-    "type": "header",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <h1>
+      "children": Array [
+        <h1>
           NASA TV
 </h1>,
-      },
-      "ref": null,
-      "rendered": Object {
+        <t
+          accessType="online"
+          buttonText="Login with Google"
+          clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
+          cookiePolicy="single_host_origin"
+          disabledStyle={
+                    Object {
+                              "opacity": 0.6,
+                            }
+          }
+          fetchBasicProfile={true}
+          isSignedIn="true"
+          jsSrc="https://apis.google.com/js/client:platform.js"
+          onFailure={undefined}
+          onRequest={[Function]}
+          onSuccess={undefined}
+          prompt=""
+          scope="https://www.googleapis.com/auth/youtube"
+          tag="button"
+          type="button"
+          uxMode="popup"
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -68,6 +92,113 @@ ShallowWrapper {
         "rendered": "NASA TV",
         "type": "h1",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "accessType": "online",
+          "buttonText": "Login with Google",
+          "clientId": "392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com",
+          "cookiePolicy": "single_host_origin",
+          "disabledStyle": Object {
+            "opacity": 0.6,
+          },
+          "fetchBasicProfile": true,
+          "isSignedIn": "true",
+          "jsSrc": "https://apis.google.com/js/client:platform.js",
+          "onFailure": undefined,
+          "onRequest": [Function],
+          "onSuccess": undefined,
+          "prompt": "",
+          "scope": "https://www.googleapis.com/auth/youtube",
+          "tag": "button",
+          "type": "button",
+          "uxMode": "popup",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "header",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            NASA TV
+</h1>,
+          <t
+            accessType="online"
+            buttonText="Login with Google"
+            clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
+            cookiePolicy="single_host_origin"
+            disabledStyle={
+                        Object {
+                                    "opacity": 0.6,
+                                  }
+            }
+            fetchBasicProfile={true}
+            isSignedIn="true"
+            jsSrc="https://apis.google.com/js/client:platform.js"
+            onFailure={undefined}
+            onRequest={[Function]}
+            onSuccess={undefined}
+            prompt=""
+            scope="https://www.googleapis.com/auth/youtube"
+            tag="button"
+            type="button"
+            uxMode="popup"
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "NASA TV",
+          },
+          "ref": null,
+          "rendered": "NASA TV",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessType": "online",
+            "buttonText": "Login with Google",
+            "clientId": "392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com",
+            "cookiePolicy": "single_host_origin",
+            "disabledStyle": Object {
+              "opacity": 0.6,
+            },
+            "fetchBasicProfile": true,
+            "isSignedIn": "true",
+            "jsSrc": "https://apis.google.com/js/client:platform.js",
+            "onFailure": undefined,
+            "onRequest": [Function],
+            "onSuccess": undefined,
+            "prompt": "",
+            "scope": "https://www.googleapis.com/auth/youtube",
+            "tag": "button",
+            "type": "button",
+            "uxMode": "popup",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "header",
     },
   ],
