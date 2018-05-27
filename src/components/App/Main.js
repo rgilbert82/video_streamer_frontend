@@ -5,15 +5,11 @@ import { UserPage }               from '../Users';
 import { NothingHere }            from '../Misc';
 
 export default class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div id='main'>
         <Switch>
-          <Route exact path='/' render={() => <VideosIndex /> } />
+          <Route exact path='/' render={() => <VideosIndex displayMessage={this.props.displayMessage} /> } />
           <Route path='/videos/:video_id' render={(props) => <VideoPage {...props} /> } />
           <Route exact path='/users/:user_id' render={(props) => <UserPage {...props} /> } />
           <Route path='/*' render={() => <NothingHere /> } />

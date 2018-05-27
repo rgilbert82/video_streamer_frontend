@@ -29,16 +29,30 @@ export default class UserPage extends React.Component {
   fetchUser() {
     getUserApi(this.props.match.params.user_id)
       .then((data) => {
-        console.log(data);
+        this.setState({ pageLoaded: true, comments: data.comments, user: data.user });
+        console.log(this.state);
       }).catch((err) => {
         console.log('ERROR');
       });
   }
 
   render() {
+    let content;
+
+    if (this.state.pageLoaded) {
+      content = (
+        <div>
+          <p>User content goes here</p>
+        </div>
+      );
+    } else {
+      content = <PageLoading />;
+    }
+
     return (
       <div>
         <h2>User Page</h2>
+        { content }
       </div>
     );
   }

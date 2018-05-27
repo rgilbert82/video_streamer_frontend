@@ -2,10 +2,6 @@ import React from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let googleButton;
 

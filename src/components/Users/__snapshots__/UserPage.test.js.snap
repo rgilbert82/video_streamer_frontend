@@ -27,16 +27,30 @@ exports[`class UserPage extends _react2.default.Component {
   fetchUser() {
     (0, _users.getUserApi)(this.props.match.params.user_id).
     then(data => {
-      console.log(data);
+      this.setState({ pageLoaded: true, comments: data.comments, user: data.user });
+      console.log(this.state);
     }).catch(err => {
       console.log('ERROR');
     });
   }
 
   render() {
+    let content;
+
+    if (this.state.pageLoaded) {
+      content =
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 44 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 45 }, __self: this }, 'User content goes here'));
+
+
+    } else {
+      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this });
+    }
+
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 40 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 41 }, __self: this }, 'User Page')));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this },
+        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this }, 'User Page'),
+        content));
 
 
   }} renders properly 1`] = `
@@ -64,36 +78,16 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h2>
-        User Page
-</h2>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "User Page",
-      },
-      "ref": null,
-      "rendered": "User Page",
-      "type": "h2",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <h2>
+      "children": Array [
+        <h2>
           User Page
 </h2>,
-      },
-      "ref": null,
-      "rendered": Object {
+        <PageLoading />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -104,6 +98,54 @@ ShallowWrapper {
         "rendered": "User Page",
         "type": "h2",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            User Page
+</h2>,
+          <PageLoading />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "User Page",
+          },
+          "ref": null,
+          "rendered": "User Page",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

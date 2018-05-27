@@ -6,7 +6,7 @@ describe(VideosIndex, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<VideosIndex />);
+    component = shallow(<VideosIndex displayMessage={jest.fn()}/>);
   });
 
   it('renders properly', () => {

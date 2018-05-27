@@ -50,21 +50,30 @@ export default class App extends React.Component {
     let messageBox;
 
     if (this.state.message) {
-      messageBox = <MessageBox message={this.state.message} closeMessage={this.closeMessage} />
+      messageBox = <MessageBox
+        message={this.state.message}
+        closeMessage={this.closeMessage}
+      />
     }
 
     return (
       <div>
         <Header
           loggedIn={this.state.loggedIn}
+          currentUser={this.state.currentUser}
           googleLogin={this.googleLogin}
           googleLogout={this.googleLogout}
           loginFailure={this.loginFailure}
+          displayMessage={this.displayMessage}
         />
 
         { messageBox }
 
-        <Main />
+        <Main
+          loggedIn={this.state.loggedIn}
+          currentUser={this.state.currentUser}
+          displayMessage={this.displayMessage}
+        />
       </div>
     );
   }

@@ -1,10 +1,10 @@
-import dotenv from 'dotenv';
-import React from 'react';
+import dotenv   from 'dotenv';
+import React    from 'react';
 import ReactDOM from 'react-dom';
+import { App }  from './components/App';
 import { BrowserRouter, Route } from 'react-router-dom';
+import registerServiceWorker    from './registerServiceWorker';
 import './stylesheets/index.css';
-import { App } from './components/App';
-import registerServiceWorker from './registerServiceWorker';
 
 dotenv.config();
 

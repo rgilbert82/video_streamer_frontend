@@ -48,21 +48,30 @@ exports[`class App extends _react2.default.Component {
     let messageBox;
 
     if (this.state.message) {
-      messageBox = _react2.default.createElement(_Misc.MessageBox, { message: this.state.message, closeMessage: this.closeMessage, __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this });
+      messageBox = _react2.default.createElement(_Misc.MessageBox, {
+        message: this.state.message,
+        closeMessage: this.closeMessage, __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this });
+
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 57 }, __self: this },
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 60 }, __self: this },
         _react2.default.createElement(_.Header, {
           loggedIn: this.state.loggedIn,
+          currentUser: this.state.currentUser,
           googleLogin: this.googleLogin,
           googleLogout: this.googleLogout,
-          loginFailure: this.loginFailure, __source: { fileName: _jsxFileName, lineNumber: 58 }, __self: this }),
+          loginFailure: this.loginFailure,
+          displayMessage: this.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 61 }, __self: this }),
 
 
         messageBox,
 
-        _react2.default.createElement(_.Main, { __source: { fileName: _jsxFileName, lineNumber: 67 }, __self: this })));
+        _react2.default.createElement(_.Main, {
+          loggedIn: this.state.loggedIn,
+          currentUser: this.state.currentUser,
+          displayMessage: this.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 72 }, __self: this })));
+
 
 
   }} renders properly 1`] = `
@@ -84,13 +93,19 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Header
+          currentUser={Object {}}
+          displayMessage={[Function]}
           googleLogin={[Function]}
           googleLogout={[Function]}
           loggedIn={false}
           loginFailure={[Function]}
 />,
         undefined,
-        <Main />,
+        <Main
+          currentUser={Object {}}
+          displayMessage={[Function]}
+          loggedIn={false}
+/>,
       ],
     },
     "ref": null,
@@ -100,6 +115,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "currentUser": Object {},
+          "displayMessage": [Function],
           "googleLogin": [Function],
           "googleLogout": [Function],
           "loggedIn": false,
@@ -114,7 +131,11 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "currentUser": Object {},
+          "displayMessage": [Function],
+          "loggedIn": false,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -130,13 +151,19 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Header
+            currentUser={Object {}}
+            displayMessage={[Function]}
             googleLogin={[Function]}
             googleLogout={[Function]}
             loggedIn={false}
             loginFailure={[Function]}
 />,
           undefined,
-          <Main />,
+          <Main
+            currentUser={Object {}}
+            displayMessage={[Function]}
+            loggedIn={false}
+/>,
         ],
       },
       "ref": null,
@@ -146,6 +173,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "currentUser": Object {},
+            "displayMessage": [Function],
             "googleLogin": [Function],
             "googleLogout": [Function],
             "loggedIn": false,
@@ -160,7 +189,11 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "currentUser": Object {},
+            "displayMessage": [Function],
+            "loggedIn": false,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
