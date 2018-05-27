@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`class VideoStats extends _react2.default.Component {
+exports[`class NewCommentForm extends _react2.default.Component {
   render() {
     return (
       _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }, 'Video stats go here...')));
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }, 'New Comment Form...')));
 
 
   }} renders properly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <VideoStats />,
+  Symbol(enzyme.__unrendered__): <NewCommentForm
+    displayMessage={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -25,7 +27,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <p>
-        Video stats go here...
+        New Comment Form...
 </p>,
     },
     "ref": null,
@@ -34,10 +36,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Video stats go here...",
+        "children": "New Comment Form...",
       },
       "ref": null,
-      "rendered": "Video stats go here...",
+      "rendered": "New Comment Form...",
       "type": "p",
     },
     "type": "div",
@@ -49,7 +51,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <p>
-          Video stats go here...
+          New Comment Form...
 </p>,
       },
       "ref": null,
@@ -58,10 +60,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Video stats go here...",
+          "children": "New Comment Form...",
         },
         "ref": null,
-        "rendered": "Video stats go here...",
+        "rendered": "New Comment Form...",
         "type": "p",
       },
       "type": "div",

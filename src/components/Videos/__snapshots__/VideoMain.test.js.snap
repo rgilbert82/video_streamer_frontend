@@ -1,26 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`class VideoMain extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let commentsList;
 
     if (this.props.chat) {
-      commentsList = _react2.default.createElement(_Chat.ChatWindow, { chat: this.props.chat, __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this });
+      commentsList = _react2.default.createElement(_Chat.ChatWindow, { chat: this.props.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this });
     } else {
       commentsList =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this }, 'Chat disabled for this video'));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }, 'Chat disabled for this video'));
 
 
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, 'Video main profile goes here...'),
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }, 'Video main profile goes here...'),
         commentsList));
 
 
@@ -28,7 +24,9 @@ exports[`class VideoMain extends _react2.default.Component {
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <VideoMain />,
+  Symbol(enzyme.__unrendered__): <VideoMain
+    displayMessage={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

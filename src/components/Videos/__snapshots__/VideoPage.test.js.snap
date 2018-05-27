@@ -30,7 +30,7 @@ exports[`class VideoPage extends _react2.default.Component {
       this.setState({ video: data.video, chat: data.chat, pageLoaded: true });
       console.log(this.state);
     }).catch(() => {
-      console.log('ERROR');
+      this.props.displayMessage('There was an error loading the video.');
     });
   }
 
@@ -40,7 +40,7 @@ exports[`class VideoPage extends _react2.default.Component {
     if (this.state.pageLoaded) {
       content =
       _react2.default.createElement(_reactRouterDom.Switch, { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () => _react2.default.createElement(_.VideoMain, { chat: this.state.chat, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () => _react2.default.createElement(_.VideoMain, { chat: this.state.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id/stats', render: () => _react2.default.createElement(_.VideoStats, { __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/videos/:video_id/*', render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }));
 
@@ -60,6 +60,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <VideoPage
+    displayMessage={[Function]}
     match={
         Object {
             "params": Object {

@@ -34,7 +34,7 @@ export default class VideoPage extends React.Component {
         this.setState({ video: data.video, chat: data.chat, pageLoaded: true });
         console.log(this.state);
       }).catch(() => {
-        console.log('ERROR');
+        this.props.displayMessage('There was an error loading the video.');
       });
   }
 
@@ -44,7 +44,7 @@ export default class VideoPage extends React.Component {
     if (this.state.pageLoaded) {
       content = (
         <Switch>
-          <Route exact path='/videos/:video_id' render={() => <VideoMain chat={this.state.chat} /> } />
+          <Route exact path='/videos/:video_id' render={() => <VideoMain chat={this.state.chat} displayMessage={this.props.displayMessage} /> } />
           <Route exact path='/videos/:video_id/stats' render={() => <VideoStats /> } />
           <Route path='/videos/:video_id/*' render={() => <NothingHere /> } />
         </Switch>

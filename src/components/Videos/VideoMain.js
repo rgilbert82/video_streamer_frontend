@@ -2,15 +2,11 @@ import React          from 'react';
 import { ChatWindow } from '../Chat';
 
 export default class VideoMain extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let commentsList;
 
     if (this.props.chat) {
-      commentsList = <ChatWindow chat={this.props.chat} />;
+      commentsList = <ChatWindow chat={this.props.chat} displayMessage={this.props.displayMessage} />;
     } else {
       commentsList = (
         <div>

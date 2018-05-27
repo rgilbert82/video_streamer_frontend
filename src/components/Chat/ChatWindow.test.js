@@ -6,7 +6,7 @@ describe(ChatWindow, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<ChatWindow />);
+    component = shallow(<ChatWindow displayMessage={jest.fn()}/>);
   });
 
   it('renders properly', () => {

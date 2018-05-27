@@ -6,7 +6,7 @@ describe(VideoPage, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<VideoPage match={{params: { video_id: '12345' }}} />);
+    component = shallow(<VideoPage match={{params: { video_id: '12345' }}} displayMessage={jest.fn()}/>);
   });
 
   it('renders properly', () => {

@@ -6,7 +6,7 @@ describe(VideoMain, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<VideoMain />);
+    component = shallow(<VideoMain displayMessage={jest.fn()} />);
   });
 
   it('renders properly', () => {

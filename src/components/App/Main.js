@@ -10,7 +10,7 @@ export default class Main extends React.Component {
       <div id='main'>
         <Switch>
           <Route exact path='/' render={() => <VideosIndex displayMessage={this.props.displayMessage} /> } />
-          <Route path='/videos/:video_id' render={(props) => <VideoPage {...props} /> } />
+          <Route path='/videos/:video_id' render={(props) => <VideoPage {...props} displayMessage={this.props.displayMessage} /> } />
           <Route exact path='/users/:user_id' render={(props) => <UserPage {...props} /> } />
           <Route path='/*' render={() => <NothingHere /> } />
         </Switch>
