@@ -6,7 +6,7 @@ describe(UserPage, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<UserPage match={{params: { user_id: '12345' }}} />);
+    component = shallow(<UserPage match={{params: { user_id: '12345' }}} displayMessage={jest.fn()} />);
   });
 
   it('renders properly', () => {

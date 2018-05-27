@@ -1,6 +1,8 @@
-import React           from 'react';
-import { PageLoading } from '../Misc'
-import { getUserApi }  from '../../services/api/users';
+import React                from 'react';
+import { PageLoading }      from '../Misc'
+import { UserHeader }       from '.';
+import { UserCommentsList } from '.';
+import { getUserApi }       from '../../services/api/users';
 
 export default class UserPage extends React.Component {
   constructor(props) {
@@ -32,7 +34,7 @@ export default class UserPage extends React.Component {
         this.setState({ pageLoaded: true, comments: data.comments, user: data.user });
         console.log(this.state);
       }).catch((err) => {
-        console.log('ERROR');
+        this.props.displayMessage('There was an error loading the user');
       });
   }
 
@@ -42,7 +44,8 @@ export default class UserPage extends React.Component {
     if (this.state.pageLoaded) {
       content = (
         <div>
-          <p>User content goes here</p>
+          <UserHeader user={this.state.user} />
+          <UserCommentsList comments={this.state.comments} />
         </div>
       );
     } else {
@@ -51,7 +54,6 @@ export default class UserPage extends React.Component {
 
     return (
       <div>
-        <h2>User Page</h2>
         { content }
       </div>
     );
