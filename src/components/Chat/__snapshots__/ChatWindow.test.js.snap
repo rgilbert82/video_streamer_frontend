@@ -1,22 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`class UserPage extends _react2.default.Component {
+exports[`class ChatWindow extends _react2.default.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      pageLoaded: false,
-      comments: [],
-      user: {} };
+      messages: [],
+      updating: false };
 
 
-    this.fetchUser = this.fetchUser.bind(this);
+    this.fetchMessages = this.fetchMessages.bind(this);
   }
 
   componentDidMount() {
     this._isMounted = true;
     if (this._isMounted) {
-      this.fetchUser();
+      this.fetchMessages();
     }
   }
 
@@ -24,8 +23,8 @@ exports[`class UserPage extends _react2.default.Component {
     this._isMounted = false;
   }
 
-  fetchUser() {
-    (0, _users.getUserApi)(this.props.match.params.user_id).
+  fetchMessages() {
+    (0, _chats.getChatMessagesApi)(this.props.chat, this.state.updating).
     then(data => {
       console.log(data);
     }).catch(err => {
@@ -35,23 +34,15 @@ exports[`class UserPage extends _react2.default.Component {
 
   render() {
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 40 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 41 }, __self: this }, 'User Page')));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 38 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 39 }, __self: this }, 'Comments go here...')));
 
 
   }} renders properly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <UserPage
-    match={
-        Object {
-            "params": Object {
-              "user_id": "12345",
-            },
-          }
-    }
-/>,
+  Symbol(enzyme.__unrendered__): <ChatWindow />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -64,9 +55,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h2>
-        User Page
-</h2>,
+      "children": <p>
+        Comments go here...
+</p>,
     },
     "ref": null,
     "rendered": Object {
@@ -74,11 +65,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "User Page",
+        "children": "Comments go here...",
       },
       "ref": null,
-      "rendered": "User Page",
-      "type": "h2",
+      "rendered": "Comments go here...",
+      "type": "p",
     },
     "type": "div",
   },
@@ -88,9 +79,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h2>
-          User Page
-</h2>,
+        "children": <p>
+          Comments go here...
+</p>,
       },
       "ref": null,
       "rendered": Object {
@@ -98,11 +89,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "User Page",
+          "children": "Comments go here...",
         },
         "ref": null,
-        "rendered": "User Page",
-        "type": "h2",
+        "rendered": "Comments go here...",
+        "type": "p",
       },
       "type": "div",
     },

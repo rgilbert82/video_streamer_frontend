@@ -6,7 +6,7 @@ describe(VideoPage, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<VideoPage />);
+    component = shallow(<VideoPage match={{params: { video_id: '12345' }}} />);
   });
 
   it('renders properly', () => {

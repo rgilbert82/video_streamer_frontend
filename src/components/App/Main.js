@@ -11,11 +11,11 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id='main'>
         <Switch>
           <Route exact path='/' render={() => <VideosIndex /> } />
           <Route path='/videos/:video_id' render={(props) => <VideoPage {...props} /> } />
-          <Route exact path='/users/:user_id' render={() => <UserPage /> } />
+          <Route exact path='/users/:user_id' render={(props) => <UserPage {...props} /> } />
           <Route path='/*' render={() => <NothingHere /> } />
         </Switch>
       </div>

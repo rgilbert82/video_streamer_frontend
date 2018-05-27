@@ -5,8 +5,33 @@ exports[`class VideoPage extends _react2.default.Component {
     super(props);
 
     this.state = {
-      pageLoaded: true };
+      pageLoaded: false,
+      video: {},
+      chat: null };
 
+
+    this.fetchVideo = this.fetchVideo.bind(this);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+    if (this._isMounted) {
+      this.fetchVideo();
+    }
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  fetchVideo() {
+    return (0, _videos.getVideoApi)(this.props.match.params.video_id).
+    then(data => {
+      this.setState({ video: data.video, chat: data.chat, pageLoaded: true });
+      console.log(this.state);
+    }).catch(() => {
+      console.log('ERROR');
+    });
   }
 
   render() {
@@ -14,19 +39,19 @@ exports[`class VideoPage extends _react2.default.Component {
 
     if (this.state.pageLoaded) {
       content =
-      _react2.default.createElement(_reactRouterDom.Switch, { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () => _react2.default.createElement(_.VideoMain, { __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }),
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id/stats', render: () => _react2.default.createElement(_.VideoStats, { __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: this }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/videos/:video_id/*', render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this }));
+      _react2.default.createElement(_reactRouterDom.Switch, { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () => _react2.default.createElement(_.VideoMain, { chat: this.state.chat, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id/stats', render: () => _react2.default.createElement(_.VideoStats, { __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/videos/:video_id/*', render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }));
 
 
     } else {
-      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this });
+      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this });
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 31 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this }, 'Video Page'),
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 57 }, __self: this },
+        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 58 }, __self: this }, 'Video Page'),
         content));
 
 
@@ -34,7 +59,15 @@ exports[`class VideoPage extends _react2.default.Component {
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <VideoPage />,
+  Symbol(enzyme.__unrendered__): <VideoPage
+    match={
+        Object {
+            "params": Object {
+              "video_id": "12345",
+            },
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -51,22 +84,7 @@ ShallowWrapper {
         <h2>
           Video Page
 </h2>,
-        <Switch>
-          <Route
-                    exact={true}
-                    path="/videos/:video_id"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/videos/:video_id/stats"
-                    render={[Function]}
-          />
-          <Route
-                    path="/videos/:video_id/*"
-                    render={[Function]}
-          />
-</Switch>,
+        <PageLoading />,
       ],
     },
     "ref": null,
@@ -86,65 +104,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <Route
-              exact={true}
-              path="/videos/:video_id"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/videos/:video_id/stats"
-              render={[Function]}
-/>,
-            <Route
-              path="/videos/:video_id/*"
-              render={[Function]}
-/>,
-          ],
-        },
+        "props": Object {},
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/videos/:video_id",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/videos/:video_id/stats",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "path": "/videos/:video_id/*",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -160,22 +122,7 @@ ShallowWrapper {
           <h2>
             Video Page
 </h2>,
-          <Switch>
-            <Route
-                        exact={true}
-                        path="/videos/:video_id"
-                        render={[Function]}
-            />
-            <Route
-                        exact={true}
-                        path="/videos/:video_id/stats"
-                        render={[Function]}
-            />
-            <Route
-                        path="/videos/:video_id/*"
-                        render={[Function]}
-            />
-</Switch>,
+          <PageLoading />,
         ],
       },
       "ref": null,
@@ -195,65 +142,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Route
-                exact={true}
-                path="/videos/:video_id"
-                render={[Function]}
-/>,
-              <Route
-                exact={true}
-                path="/videos/:video_id/stats"
-                render={[Function]}
-/>,
-              <Route
-                path="/videos/:video_id/*"
-                render={[Function]}
-/>,
-            ],
-          },
+          "props": Object {},
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "exact": true,
-                "path": "/videos/:video_id",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "exact": true,
-                "path": "/videos/:video_id/stats",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "path": "/videos/:video_id/*",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+          "rendered": null,
           "type": [Function],
         },
       ],

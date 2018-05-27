@@ -6,7 +6,7 @@ describe(UserPage, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<UserPage />);
+    component = shallow(<UserPage match={{params: { user_id: '12345' }}} />);
   });
 
   it('renders properly', () => {

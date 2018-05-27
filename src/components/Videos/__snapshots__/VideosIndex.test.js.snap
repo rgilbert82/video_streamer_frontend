@@ -3,12 +3,52 @@
 exports[`class VideosIndex extends _react2.default.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      pageLoaded: false,
+      videos: [] };
+
+
+    this.fetchVideos = this.fetchVideos.bind(this);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+    if (this._isMounted) {
+      this.fetchVideos();
+    }
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  fetchVideos() {
+    return (0, _videos.getVideosApi)().
+    then(data => {
+      this.setState({ videos: data, pageLoaded: true });
+    }).catch(err => {
+      console.log('ERROR');
+    });
   }
 
   render() {
+    let content;
+
+    if (this.state.pageLoaded) {
+      content =
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 43 }, __self: this }, 'Videos go here...'));
+
+
+    } else {
+      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this });
+    }
+
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, 'Videos index')));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 51 }, __self: this },
+        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 52 }, __self: this }, 'Videos index'),
+        content));
 
 
   }} renders properly 1`] = `
@@ -28,36 +68,16 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h2>
-        Videos index
-</h2>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "Videos index",
-      },
-      "ref": null,
-      "rendered": "Videos index",
-      "type": "h2",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <h2>
+      "children": Array [
+        <h2>
           Videos index
 </h2>,
-      },
-      "ref": null,
-      "rendered": Object {
+        <PageLoading />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -68,6 +88,54 @@ ShallowWrapper {
         "rendered": "Videos index",
         "type": "h2",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Videos index
+</h2>,
+          <PageLoading />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Videos index",
+          },
+          "ref": null,
+          "rendered": "Videos index",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],
