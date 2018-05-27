@@ -5,18 +5,25 @@ exports[`class VideoMain extends _react2.default.Component {
     let commentsList;
 
     if (this.props.chat) {
-      commentsList = _react2.default.createElement(_Chat.ChatWindow, { chat: this.props.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this });
+      commentsList =
+      _react2.default.createElement(_Chat.ChatWindow, {
+        chat: this.props.chat,
+        loggedIn: this.props.loggedIn,
+        currentUser: this.props.currentUser,
+        displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this });
+
+
     } else {
       commentsList =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this }, 'Chat disabled for this video'));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }, 'Chat disabled for this video'));
 
 
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
-        _react2.default.createElement(_.VideoPlayer, { video: this.props.video, __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }),
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this },
+        _react2.default.createElement(_.VideoPlayer, { video: this.props.video, __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: this }),
         commentsList));
 
 

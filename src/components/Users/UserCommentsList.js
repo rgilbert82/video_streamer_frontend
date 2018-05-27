@@ -3,10 +3,10 @@ import { UserCommentListItem } from '.';
 
 export default class UserCommentsList extends React.Component {
   render() {
-    const comments = this.props.comments.map((comment) => {
+    const comments = this.props.comments.map((commentObj) => {
       return (
-        <li key={comment.id}>
-          <UserCommentListItem comment={comment} />
+        <li key={commentObj.comment.id}>
+          <UserCommentListItem commentObj={commentObj} />
         </li>
       );
     });

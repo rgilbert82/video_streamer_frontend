@@ -1,11 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`class UserCommentListItem extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comment: this.props.commentObj.comment,
+      video: this.props.commentObj.video };
+
+  }
+
   render() {
+    const videoPath = \`/videos/\${this.state.video.id}\`;
+
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }, this.props.comment.message),
-        _react2.default.createElement('small', { __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this }, this.props.comment.published_at)));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this }, this.state.comment.message),
+        _react2.default.createElement('span', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, 'From video: ', _react2.default.createElement(_reactRouterDom.Link, { to: videoPath, __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, this.state.video.title)),
+        _react2.default.createElement('small', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }, this.state.comment.published_at)));
 
 
   }} renders properly 1`] = `
@@ -13,10 +24,16 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <UserCommentListItem
-    comment={
+    commentObj={
         Object {
-            "message": "hello",
-            "published_at": "2018",
+            "comment": Object {
+              "message": "hello",
+              "published_at": "2018",
+            },
+            "video": Object {
+              "id": "123",
+              "title": "video title",
+            },
           }
     }
 />,
@@ -36,6 +53,15 @@ ShallowWrapper {
         <p>
           hello
 </p>,
+        <span>
+          From video: 
+          <Link
+                    replace={false}
+                    to="/videos/123"
+          >
+                    video title
+          </Link>
+</span>,
         <small>
           2018
 </small>,
@@ -53,6 +79,40 @@ ShallowWrapper {
         "ref": null,
         "rendered": "hello",
         "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "From video: ",
+            <Link
+              replace={false}
+              to="/videos/123"
+>
+              video title
+</Link>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "From video: ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "video title",
+              "replace": false,
+              "to": "/videos/123",
+            },
+            "ref": null,
+            "rendered": "video title",
+            "type": [Function],
+          },
+        ],
+        "type": "span",
       },
       Object {
         "instance": null,
@@ -78,6 +138,15 @@ ShallowWrapper {
           <p>
             hello
 </p>,
+          <span>
+            From video: 
+            <Link
+                        replace={false}
+                        to="/videos/123"
+            >
+                        video title
+            </Link>
+</span>,
           <small>
             2018
 </small>,
@@ -95,6 +164,40 @@ ShallowWrapper {
           "ref": null,
           "rendered": "hello",
           "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "From video: ",
+              <Link
+                replace={false}
+                to="/videos/123"
+>
+                video title
+</Link>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "From video: ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "video title",
+                "replace": false,
+                "to": "/videos/123",
+              },
+              "ref": null,
+              "rendered": "video title",
+              "type": [Function],
+            },
+          ],
+          "type": "span",
         },
         Object {
           "instance": null,

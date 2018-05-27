@@ -31,8 +31,10 @@ export default class VideoPage extends React.Component {
   fetchVideo() {
     return getVideoApi(this.props.match.params.video_id)
       .then((data) => {
-        this.setState({ video: data.video, chat: data.chat, pageLoaded: true });
-        console.log(this.state);
+        this.setState({
+          video:      data.video, 
+          chat:       data.chat,
+          pageLoaded: true });
       }).catch(() => {
         this.props.displayMessage('There was an error loading the video.');
       });
@@ -44,9 +46,23 @@ export default class VideoPage extends React.Component {
     if (this.state.pageLoaded) {
       content = (
         <Switch>
-          <Route exact path='/videos/:video_id' render={() => <VideoMain video={this.state.video} chat={this.state.chat} displayMessage={this.props.displayMessage} /> } />
-          <Route exact path='/videos/:video_id/stats' render={() => <VideoStats /> } />
-          <Route path='/videos/:video_id/*' render={() => <NothingHere /> } />
+          <Route exact path='/videos/:video_id' render={ () =>
+            <VideoMain
+              video={this.state.video}
+              chat={this.state.chat}
+              loggedIn={this.props.loggedIn}
+              currentUser={this.props.currentUser}
+              displayMessage={this.props.displayMessage} />
+          }/>
+
+          <Route exact path='/videos/:video_id/stats' render={ (props) =>
+            <VideoStats {...props}
+              video={this.state.video}
+              displayMessage={this.props.displayMessage}
+            />
+          }/>
+
+          <Route path='/videos/:video_id/*' render={ () => <NothingHere /> } />
         </Switch>
       );
     } else {

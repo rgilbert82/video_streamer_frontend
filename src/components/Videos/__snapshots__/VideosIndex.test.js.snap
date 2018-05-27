@@ -27,7 +27,6 @@ exports[`class VideosIndex extends _react2.default.Component {
     return (0, _videos.getVideosApi)().
     then(data => {
       this.setState({ videos: data, pageLoaded: true });
-      console.log(this.state.videos);
     }).catch(err => {
       this.props.displayMessage('There was an error loading the videos');
     });
@@ -41,34 +40,34 @@ exports[`class VideosIndex extends _react2.default.Component {
       if (this.state.videos.length > 0) {
         videos = this.state.videos.map(video => {
           return (
-            _react2.default.createElement('li', { key: video.content.id, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this },
-              _react2.default.createElement(_.VideoListItem, { video: video, __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this })));
+            _react2.default.createElement('li', { key: video.content.id, __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
+              _react2.default.createElement(_.VideoListItem, { video: video, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this })));
 
 
         });
       } else {
         videos =
-        _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this },
-          _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 55 }, __self: this }, 'There are no videos here...'));
+        _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this },
+          _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this }, 'There are no videos here...'));
 
 
       }
 
       content =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 61 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 62 }, __self: this }, 'Select a video stream'),
-        _react2.default.createElement('ul', { __source: { fileName: _jsxFileName, lineNumber: 63 }, __self: this },
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 60 }, __self: this },
+        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 61 }, __self: this }, 'Select a video stream'),
+        _react2.default.createElement('ul', { __source: { fileName: _jsxFileName, lineNumber: 62 }, __self: this },
           videos));
 
 
 
     } else {
-      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 69 }, __self: this });
+      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 68 }, __self: this });
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 73 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 74 }, __self: this }, 'Videos index'),
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 72 }, __self: this },
+        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 73 }, __self: this }, 'Videos index'),
         content));
 
 

@@ -27,8 +27,11 @@ exports[`class UserPage extends _react2.default.Component {
   fetchUser() {
     (0, _users.getUserApi)(this.props.match.params.user_id).
     then(data => {
-      this.setState({ pageLoaded: true, comments: data.comments, user: data.user });
-      console.log(this.state);
+      this.setState({
+        pageLoaded: true,
+        comments: data.comments,
+        user: data.user });
+
     }).catch(err => {
       this.props.displayMessage('There was an error loading the user');
     });
@@ -39,17 +42,17 @@ exports[`class UserPage extends _react2.default.Component {
 
     if (this.state.pageLoaded) {
       content =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
-        _react2.default.createElement(_.UserHeader, { user: this.state.user, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }),
-        _react2.default.createElement(_.UserCommentsList, { comments: this.state.comments, __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this },
+        _react2.default.createElement(_.UserHeader, { user: this.state.user, __source: { fileName: _jsxFileName, lineNumber: 50 }, __self: this }),
+        _react2.default.createElement(_.UserCommentsList, { comments: this.state.comments, __source: { fileName: _jsxFileName, lineNumber: 51 }, __self: this }));
 
 
     } else {
-      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 52 }, __self: this });
+      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 55 }, __self: this });
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 56 }, __self: this },
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 59 }, __self: this },
         content));
 
 

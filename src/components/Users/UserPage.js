@@ -31,8 +31,11 @@ export default class UserPage extends React.Component {
   fetchUser() {
     getUserApi(this.props.match.params.user_id)
       .then((data) => {
-        this.setState({ pageLoaded: true, comments: data.comments, user: data.user });
-        console.log(this.state);
+        this.setState({
+          pageLoaded: true,
+          comments: data.comments,
+          user: data.user
+        });
       }).catch((err) => {
         this.props.displayMessage('There was an error loading the user');
       });

@@ -30,7 +30,6 @@ export default class VideosIndex extends React.Component {
     return getVideosApi()
       .then((data) => {
         this.setState({ videos: data, pageLoaded: true });
-        console.log(this.state.videos);
       }).catch((err) => {
         this.props.displayMessage('There was an error loading the videos');
       });

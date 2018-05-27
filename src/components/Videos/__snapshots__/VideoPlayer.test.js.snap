@@ -3,12 +3,25 @@
 exports[`class VideoPlayer extends _react2.default.Component {
   render() {
     const videoUrl = \`https://www.youtube.com/embed/\${this.props.video.id}?autoplay=1\`;
+    const statsPath = \`/videos/\${this.props.video.id}/stats\`;
+
     return (
-      _react2.default.createElement("div", { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this },
-        _react2.default.createElement("h2", { __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this }, this.props.video.title),
-        _react2.default.createElement("iframe", { width: "560", height: "315", src: videoUrl, frameBorder: "0", allow: "autoplay; encrypted-media", allowFullScreen: true, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this }),
-        _react2.default.createElement("p", { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this }, this.props.video.description),
-        _react2.default.createElement("small", { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, this.props.video.published_at)));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
+        _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this },
+          _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this }, this.props.video.title),
+          _react2.default.createElement(_reactRouterDom.Link, { to: statsPath, __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }, 'video stats')),
+
+        _react2.default.createElement('iframe', {
+          width: '560',
+          height: '315',
+          src: videoUrl,
+          title: this.props.video.id,
+          frameBorder: '0',
+          allow: 'autoplay; encrypted-media',
+          allowFullScreen: true, __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: this }),
+
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, this.props.video.description),
+        _react2.default.createElement('small', { __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, this.props.video.published_at)));
 
 
   }} renders properly 1`] = `
@@ -38,224 +51,17 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h2>
-          Title
-</h2>,
-        <iframe
-          allow="autoplay; encrypted-media"
-          allowFullScreen={true}
-          frameBorder="0"
-          height="315"
-          src="https://www.youtube.com/embed/123?autoplay=1"
-          width="560"
-/>,
-        <p>
-          Description
-</p>,
-        <small>
-          2018
-</small>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Title",
-        },
-        "ref": null,
-        "rendered": "Title",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "allow": "autoplay; encrypted-media",
-          "allowFullScreen": true,
-          "frameBorder": "0",
-          "height": "315",
-          "src": "https://www.youtube.com/embed/123?autoplay=1",
-          "width": "560",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "iframe",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Description",
-        },
-        "ref": null,
-        "rendered": "Description",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "2018",
-        },
-        "ref": null,
-        "rendered": "2018",
-        "type": "small",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
+        <div>
           <h2>
-            Title
-</h2>,
-          <iframe
-            allow="autoplay; encrypted-media"
-            allowFullScreen={true}
-            frameBorder="0"
-            height="315"
-            src="https://www.youtube.com/embed/123?autoplay=1"
-            width="560"
-/>,
-          <p>
-            Description
-</p>,
-          <small>
-            2018
-</small>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Title",
-          },
-          "ref": null,
-          "rendered": "Title",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "allow": "autoplay; encrypted-media",
-            "allowFullScreen": true,
-            "frameBorder": "0",
-            "height": "315",
-            "src": "https://www.youtube.com/embed/123?autoplay=1",
-            "width": "560",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "iframe",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Description",
-          },
-          "ref": null,
-          "rendered": "Description",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "2018",
-          },
-          "ref": null,
-          "rendered": "2018",
-          "type": "small",
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
-`;
-
-exports[`class VideoPlayer extends _react2.default.Component {
-  render() {
-    const videoUrl = \`https://www.youtube.com/embed/\${this.props.video.id}?autoplay=1\`;
-    return (
-      _react2.default.createElement("div", { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this },
-        _react2.default.createElement("h2", { __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this }, this.props.video.title),
-        _react2.default.createElement("iframe", { width: "560", height: "315", src: videoUrl, title: props.video.id, frameBorder: "0", allow: "autoplay; encrypted-media", allowFullScreen: true, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this }),
-        _react2.default.createElement("p", { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this }, this.props.video.description),
-        _react2.default.createElement("small", { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, this.props.video.published_at)));
-
-
-  }} renders properly 1`] = `undefined`;
-
-exports[`class VideoPlayer extends _react2.default.Component {
-  render() {
-    const videoUrl = \`https://www.youtube.com/embed/\${this.props.video.id}?autoplay=1\`;
-    return (
-      _react2.default.createElement("div", { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this },
-        _react2.default.createElement("h2", { __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this }, this.props.video.title),
-        _react2.default.createElement("iframe", { width: "560", height: "315", src: videoUrl, title: this.props.video.id, frameBorder: "0", allow: "autoplay; encrypted-media", allowFullScreen: true, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this }),
-        _react2.default.createElement("p", { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this }, this.props.video.description),
-        _react2.default.createElement("small", { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this }, this.props.video.published_at)));
-
-
-  }} renders properly 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <VideoPlayer
-    video={
-        Object {
-            "description": "Description",
-            "id": "123",
-            "published_at": "2018",
-            "title": "Title",
-          }
-    }
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <h2>
-          Title
-</h2>,
+                    Title
+          </h2>
+          <Link
+                    replace={false}
+                    to="/videos/123/stats"
+          >
+                    video stats
+          </Link>
+</div>,
         <iframe
           allow="autoplay; encrypted-media"
           allowFullScreen={true}
@@ -280,11 +86,46 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Title",
+          "children": Array [
+            <h2>
+              Title
+</h2>,
+            <Link
+              replace={false}
+              to="/videos/123/stats"
+>
+              video stats
+</Link>,
+          ],
         },
         "ref": null,
-        "rendered": "Title",
-        "type": "h2",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Title",
+            },
+            "ref": null,
+            "rendered": "Title",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "video stats",
+              "replace": false,
+              "to": "/videos/123/stats",
+            },
+            "ref": null,
+            "rendered": "video stats",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -335,9 +176,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h2>
-            Title
-</h2>,
+          <div>
+            <h2>
+                        Title
+            </h2>
+            <Link
+                        replace={false}
+                        to="/videos/123/stats"
+            >
+                        video stats
+            </Link>
+</div>,
           <iframe
             allow="autoplay; encrypted-media"
             allowFullScreen={true}
@@ -362,11 +211,46 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Title",
+            "children": Array [
+              <h2>
+                Title
+</h2>,
+              <Link
+                replace={false}
+                to="/videos/123/stats"
+>
+                video stats
+</Link>,
+            ],
           },
           "ref": null,
-          "rendered": "Title",
-          "type": "h2",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Title",
+              },
+              "ref": null,
+              "rendered": "Title",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "video stats",
+                "replace": false,
+                "to": "/videos/123/stats",
+              },
+              "ref": null,
+              "rendered": "video stats",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,

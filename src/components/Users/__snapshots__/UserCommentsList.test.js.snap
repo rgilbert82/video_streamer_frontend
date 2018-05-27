@@ -2,10 +2,10 @@
 
 exports[`class UserCommentsList extends _react2.default.Component {
   render() {
-    const comments = this.props.comments.map(comment => {
+    const comments = this.props.comments.map(commentObj => {
       return (
-        _react2.default.createElement('li', { key: comment.id, __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this },
-          _react2.default.createElement(_.UserCommentListItem, { comment: comment, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this })));
+        _react2.default.createElement('li', { key: commentObj.comment.id, __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this },
+          _react2.default.createElement(_.UserCommentListItem, { commentObj: commentObj, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this })));
 
 
     });

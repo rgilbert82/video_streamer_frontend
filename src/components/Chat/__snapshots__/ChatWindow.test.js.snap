@@ -11,6 +11,7 @@ exports[`class ChatWindow extends _react2.default.Component {
 
     this.fetchMessages = this.fetchMessages.bind(this);
     this.setFetchTimer = this.setFetchTimer.bind(this);
+    this.createNewComment = this.createNewComment.bind(this);
   }
 
   componentDidMount() {
@@ -25,179 +26,66 @@ exports[`class ChatWindow extends _react2.default.Component {
   }
 
   fetchMessages() {
-    (0, _chats.getChatMessagesApi)(this.props.chat, this.state.updating).
-    then(data => {
-      if (data.comments.length > 0) {
-        console.log(data.comments);
-        this.setState({ updating: true, messages: this.state.messages.concat(data.comments) });
-      }
-      this.setFetchTimer(data.poll_interval);
-    }).catch(err => {
-      this.props.displayMessage('There was an error loading the chat messages.');
-    });
+    if (this._isMounted) {
+      return (0, _chats.getChatMessagesApi)(this.props.chat, this.state.updating).
+      then(data => {
+        if (data.comments.length > 0) {
+          this.setState({
+            updating: true,
+            messages: this.state.messages.concat(data.comments) });
+
+        }
+        this.setFetchTimer(data.poll_interval);
+      }).catch(err => {
+        this.props.displayMessage('There was an error loading the chat messages.');
+      });
+    }
   }
 
   setFetchTimer(interval) {
     interval = interval < 3000 ? 3000 : interval;
 
-    if (this._isMounted) {
-      setTimeout(() => {
-        this.fetchMessages();
-      }, interval);
-    }
-  }
-
-  render() {
-    return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this },
-        _react2.default.createElement(_.CommentsList, { __source: { fileName: _jsxFileName, lineNumber: 55 }, __self: this }),
-        _react2.default.createElement(_.NewCommentForm, { __source: { fileName: _jsxFileName, lineNumber: 56 }, __self: this })));
-
-
-  }} renders properly 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ChatWindow
-    displayMessage={[Function]}
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <CommentsList />,
-        <NewCommentForm />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <CommentsList />,
-          <NewCommentForm />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
-`;
-
-exports[`class ChatWindow extends _react2.default.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      messages: [],
-      updating: false };
-
-
-    this.fetchMessages = this.fetchMessages.bind(this);
-    this.setFetchTimer = this.setFetchTimer.bind(this);
-  }
-
-  componentDidMount() {
-    this._isMounted = true;
-    if (this._isMounted) {
+    setTimeout(() => {
       this.fetchMessages();
-    }
+    }, interval);
   }
 
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
+  createNewComment(commentBody) {
+    const data = {
+      chat_id: this.props.chat.id,
+      message: commentBody };
 
-  fetchMessages() {
-    (0, _chats.getChatMessagesApi)(this.props.chat, this.state.updating).
-    then(data => {
-      if (data.comments.length > 0) {
-        console.log(data.comments);
-        this.setState({ updating: true, messages: this.state.messages.concat(data.comments) });
-      }
-      this.setFetchTimer(data.poll_interval);
-    }).catch(err => {
-      this.props.displayMessage('There was an error loading the chat messages.');
+
+    return (0, _chats.createChatMessageApi)(this.props.currentUser.accessToken, data).
+    then(() => {
+      this.fetchMessages();
+    }).catch(() => {
+      this.props.displayMessage('There was an error creating your comment.');
     });
   }
 
-  setFetchTimer(interval) {
-    interval = interval < 3000 ? 3000 : interval;
-
-    if (this._isMounted) {
-      setTimeout(() => {
-        this.fetchMessages();
-      }, interval);
-    }
-  }
-
   render() {
+    let commentForm;
+
+    if (this.props.loggedIn) {
+      commentForm = _react2.default.createElement(_.NewCommentForm, {
+        loggedIn: this.props.loggedIn,
+        currentUser: this.props.currentUser,
+        displayMessage: this.props.displayMessage,
+        createNewComment: this.createNewComment, __source: { fileName: _jsxFileName, lineNumber: 74 }, __self: this });
+
+    } else {
+      commentForm =
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 82 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 83 }, __self: this }, 'You must be logged in to comment'));
+
+
+    }
+
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this },
-        _react2.default.createElement(_.CommentsList, { messages: this.state.messages, __source: { fileName: _jsxFileName, lineNumber: 55 }, __self: this }),
-        _react2.default.createElement(_.NewCommentForm, { __source: { fileName: _jsxFileName, lineNumber: 56 }, __self: this })));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 89 }, __self: this },
+        _react2.default.createElement(_.CommentsList, { messages: this.state.messages, __source: { fileName: _jsxFileName, lineNumber: 90 }, __self: this }),
+        commentForm));
 
 
   }} renders properly 1`] = `
@@ -223,7 +111,11 @@ ShallowWrapper {
         <CommentsList
           messages={Array []}
 />,
-        <NewCommentForm />,
+        <div>
+          <p>
+                    You must be logged in to comment
+          </p>
+</div>,
       ],
     },
     "ref": null,
@@ -242,11 +134,25 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            You must be logged in to comment
+</p>,
+        },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "You must be logged in to comment",
+          },
+          "ref": null,
+          "rendered": "You must be logged in to comment",
+          "type": "p",
+        },
+        "type": "div",
       },
     ],
     "type": "div",
@@ -261,7 +167,11 @@ ShallowWrapper {
           <CommentsList
             messages={Array []}
 />,
-          <NewCommentForm />,
+          <div>
+            <p>
+                        You must be logged in to comment
+            </p>
+</div>,
         ],
       },
       "ref": null,
@@ -280,11 +190,25 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              You must be logged in to comment
+</p>,
+          },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "You must be logged in to comment",
+            },
+            "ref": null,
+            "rendered": "You must be logged in to comment",
+            "type": "p",
+          },
+          "type": "div",
         },
       ],
       "type": "div",

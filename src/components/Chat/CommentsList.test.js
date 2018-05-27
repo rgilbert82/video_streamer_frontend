@@ -6,7 +6,7 @@ describe(CommentsList, () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<CommentsList displayMessage={jest.fn()}/>);
+    component = shallow(<CommentsList messages={[]} displayMessage={jest.fn()}/>);
   });
 
   it('renders properly', () => {

@@ -1,10 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`class NewCommentForm extends _react2.default.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      body: '' };
+
+
+    this.updateBody = this.updateBody.bind(this);
+    this.createComment = this.createComment.bind(this);
+    this.validForm = this.validForm.bind(this);
+  }
+
+  updateBody(e) {
+    this.setState({ body: e.target.value });
+  }
+
+  createComment() {
+    this.props.createNewComment(this.state.body);
+    this.setState({ body: '' });
+  }
+
+  validForm() {
+    return this.state.body.length > 0;
+  }
+
   render() {
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }, 'New Comment Form...')));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this },
+        _react2.default.createElement(_reactBootstrap.FormGroup, { __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this },
+          _react2.default.createElement(_reactBootstrap.FormControl, {
+            componentClass: 'textarea',
+            id: 'form_body',
+            onChange: this.updateBody,
+            value: this.state.body,
+            placeholder: 'Add a comment', __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this })),
+
+
+        _react2.default.createElement(_reactBootstrap.Button, {
+            id: 'submit_comment_form',
+            disabled: !this.validForm(),
+            onClick: this.createComment, __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, 'Submit')));
+
+
 
 
   }} renders properly 1`] = `
@@ -26,22 +65,87 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p>
-        New Comment Form...
-</p>,
+      "children": Array [
+        <FormGroup
+          bsClass="form-group"
+>
+          <FormControl
+                    bsClass="form-control"
+                    componentClass="textarea"
+                    id="form_body"
+                    onChange={[Function]}
+                    placeholder="Add a comment"
+                    value=""
+          />
+</FormGroup>,
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={true}
+          id="submit_comment_form"
+          onClick={[Function]}
+>
+          Submit
+</Button>,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "New Comment Form...",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "bsClass": "form-group",
+          "children": <FormControl
+            bsClass="form-control"
+            componentClass="textarea"
+            id="form_body"
+            onChange={[Function]}
+            placeholder="Add a comment"
+            value=""
+/>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "form-control",
+            "componentClass": "textarea",
+            "id": "form_body",
+            "onChange": [Function],
+            "placeholder": "Add a comment",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": "New Comment Form...",
-      "type": "p",
-    },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "active": false,
+          "block": false,
+          "bsClass": "btn",
+          "bsStyle": "default",
+          "children": "Submit",
+          "disabled": true,
+          "id": "submit_comment_form",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": [Function],
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -50,22 +154,87 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <p>
-          New Comment Form...
-</p>,
+        "children": Array [
+          <FormGroup
+            bsClass="form-group"
+>
+            <FormControl
+                        bsClass="form-control"
+                        componentClass="textarea"
+                        id="form_body"
+                        onChange={[Function]}
+                        placeholder="Add a comment"
+                        value=""
+            />
+</FormGroup>,
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            disabled={true}
+            id="submit_comment_form"
+            onClick={[Function]}
+>
+            Submit
+</Button>,
+        ],
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "New Comment Form...",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "bsClass": "form-group",
+            "children": <FormControl
+              bsClass="form-control"
+              componentClass="textarea"
+              id="form_body"
+              onChange={[Function]}
+              placeholder="Add a comment"
+              value=""
+/>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "bsClass": "form-control",
+              "componentClass": "textarea",
+              "id": "form_body",
+              "onChange": [Function],
+              "placeholder": "Add a comment",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
         },
-        "ref": null,
-        "rendered": "New Comment Form...",
-        "type": "p",
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "active": false,
+            "block": false,
+            "bsClass": "btn",
+            "bsStyle": "default",
+            "children": "Submit",
+            "disabled": true,
+            "id": "submit_comment_form",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

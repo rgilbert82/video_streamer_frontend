@@ -30,7 +30,12 @@ export default class VideoListItem extends React.Component {
     return (
       <div>
         <Link to={linkPath}><h3>{this.props.video.content.title}</h3></Link>
-        <Link to={linkPath}><img src={this.props.video.content.thumbnail} alt={this.props.video.content.title} /></Link>
+        <Link to={linkPath}>
+          <img
+            src={this.props.video.content.thumbnail}
+            alt={this.props.video.content.title}
+          />
+        </Link>
         <p>{this.descriptionShort()}</p>
         { chat_enabled }
       </div>

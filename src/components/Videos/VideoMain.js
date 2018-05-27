@@ -7,7 +7,14 @@ export default class VideoMain extends React.Component {
     let commentsList;
 
     if (this.props.chat) {
-      commentsList = <ChatWindow chat={this.props.chat} displayMessage={this.props.displayMessage} />;
+      commentsList = (
+        <ChatWindow
+          chat={this.props.chat}
+          loggedIn={this.props.loggedIn}
+          currentUser={this.props.currentUser}
+          displayMessage={this.props.displayMessage}
+        />
+      );
     } else {
       commentsList = (
         <div>
