@@ -3,12 +3,23 @@
 exports[`class Header extends _react2.default.Component {
   render() {
     let googleButton;
+    let showCurrentUser;
 
     if (this.props.loggedIn) {
       googleButton =
       _react2.default.createElement(_reactGoogleLogin.GoogleLogout, {
         buttonText: 'Logout',
-        onLogoutSuccess: this.props.googleLogout, __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this });
+        onLogoutSuccess: this.props.googleLogout, __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this });
+
+
+
+      showCurrentUser =
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
+        _react2.default.createElement('img', {
+          src: this.props.currentUser.imageUrl,
+          alt: this.props.currentUser.name + ' avatar', __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }),
+
+        _react2.default.createElement('h3', { __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, this.props.currentUser.name));
 
 
     } else {
@@ -19,14 +30,15 @@ exports[`class Header extends _react2.default.Component {
         buttonText: 'Login with Google',
         onSuccess: this.props.googleLogin,
         onFailure: this.props.loginFailure,
-        scope: 'https://www.googleapis.com/auth/youtube', __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this });
+        scope: 'https://www.googleapis.com/auth/youtube', __source: { fileName: _jsxFileName, lineNumber: 29 }, __self: this });
 
 
     }
 
     return (
-      _react2.default.createElement('header', { __source: { fileName: _jsxFileName, lineNumber: 30 }, __self: this },
-        _react2.default.createElement(_reactRouterDom.Link, { to: '/', __source: { fileName: _jsxFileName, lineNumber: 31 }, __self: this }, _react2.default.createElement('h1', { __source: { fileName: _jsxFileName, lineNumber: 31 }, __self: this }, 'NASA TV')),
+      _react2.default.createElement('header', { __source: { fileName: _jsxFileName, lineNumber: 41 }, __self: this },
+        _react2.default.createElement(_reactRouterDom.Link, { to: '/', __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, _react2.default.createElement('h1', { __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, 'NASA TV')),
+        showCurrentUser,
         googleButton));
 
 
@@ -56,6 +68,7 @@ ShallowWrapper {
                     NASA TV
           </h1>
 </Link>,
+        undefined,
         <t
           accessType="online"
           buttonText="Login with Google"
@@ -107,6 +120,7 @@ ShallowWrapper {
         },
         "type": [Function],
       },
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -153,6 +167,7 @@ ShallowWrapper {
                         NASA TV
             </h1>
 </Link>,
+          undefined,
           <t
             accessType="online"
             buttonText="Login with Google"
@@ -204,6 +219,7 @@ ShallowWrapper {
           },
           "type": [Function],
         },
+        undefined,
         Object {
           "instance": null,
           "key": undefined,
