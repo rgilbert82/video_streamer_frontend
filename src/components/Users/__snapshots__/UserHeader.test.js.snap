@@ -210,3 +210,218 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`class UserHeader extends _react2.default.Component {
+  render() {
+    return (
+      _react2.default.createElement("div", { __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: this },
+        _react2.default.createElement("img", { src: this.props.user.image_url, alt: this.props.user.id, __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }),
+        _react2.default.createElement("div", { __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this },
+          _react2.default.createElement("h2", { __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this }, this.props.user.username),
+          _react2.default.createElement("a", { href: this.props.user.youtube_url, target: "_blank", __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this }, "Youtube channel"))));
+
+
+
+  }} renders properly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <UserHeader
+    user={
+        Object {
+            "id": "1234",
+            "image_url": "youtube.com",
+            "username": "Alice",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          alt="1234"
+          src="youtube.com"
+/>,
+        <div>
+          <h2>
+                    Alice
+          </h2>
+          <a
+                    href={undefined}
+                    target="_blank"
+          >
+                    Youtube channel
+          </a>
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "1234",
+          "src": "youtube.com",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2>
+              Alice
+</h2>,
+            <a
+              href={undefined}
+              target="_blank"
+>
+              Youtube channel
+</a>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Alice",
+            },
+            "ref": null,
+            "rendered": "Alice",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Youtube channel",
+              "href": undefined,
+              "target": "_blank",
+            },
+            "ref": null,
+            "rendered": "Youtube channel",
+            "type": "a",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            alt="1234"
+            src="youtube.com"
+/>,
+          <div>
+            <h2>
+                        Alice
+            </h2>
+            <a
+                        href={undefined}
+                        target="_blank"
+            >
+                        Youtube channel
+            </a>
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "1234",
+            "src": "youtube.com",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2>
+                Alice
+</h2>,
+              <a
+                href={undefined}
+                target="_blank"
+>
+                Youtube channel
+</a>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Alice",
+              },
+              "ref": null,
+              "rendered": "Alice",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Youtube channel",
+                "href": undefined,
+                "target": "_blank",
+              },
+              "ref": null,
+              "rendered": "Youtube channel",
+              "type": "a",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

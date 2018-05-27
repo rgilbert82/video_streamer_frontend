@@ -1,4 +1,5 @@
-import React from 'react';
+import React                         from 'react';
+import { Link }                      from 'react-router-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 export default class Header extends React.Component {
@@ -27,7 +28,7 @@ export default class Header extends React.Component {
 
     return (
       <header>
-        <h1>NASA TV</h1>
+        <Link to='/'><h1>NASA TV</h1></Link>
         { googleButton }
       </header>
     );

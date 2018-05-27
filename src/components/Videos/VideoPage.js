@@ -44,7 +44,7 @@ export default class VideoPage extends React.Component {
     if (this.state.pageLoaded) {
       content = (
         <Switch>
-          <Route exact path='/videos/:video_id' render={() => <VideoMain chat={this.state.chat} displayMessage={this.props.displayMessage} /> } />
+          <Route exact path='/videos/:video_id' render={() => <VideoMain video={this.state.video} chat={this.state.chat} displayMessage={this.props.displayMessage} /> } />
           <Route exact path='/videos/:video_id/stats' render={() => <VideoStats /> } />
           <Route path='/videos/:video_id/*' render={() => <NothingHere /> } />
         </Switch>
@@ -55,7 +55,6 @@ export default class VideoPage extends React.Component {
 
     return (
       <div>
-        <h2>Video Page</h2>
         { content }
       </div>
     );

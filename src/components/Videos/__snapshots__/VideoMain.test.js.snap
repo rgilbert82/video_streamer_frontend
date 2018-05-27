@@ -5,18 +5,18 @@ exports[`class VideoMain extends _react2.default.Component {
     let commentsList;
 
     if (this.props.chat) {
-      commentsList = _react2.default.createElement(_Chat.ChatWindow, { chat: this.props.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this });
+      commentsList = _react2.default.createElement(_Chat.ChatWindow, { chat: this.props.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this });
     } else {
       commentsList =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }, 'Chat disabled for this video'));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this },
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this }, 'Chat disabled for this video'));
 
 
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }, 'Video main profile goes here...'),
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
+        _react2.default.createElement(_.VideoPlayer, { video: this.props.video, __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }),
         commentsList));
 
 
@@ -40,9 +40,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <p>
-          Video main profile goes here...
-</p>,
+        <VideoPlayer
+          video={undefined}
+/>,
         <div>
           <p>
                     Chat disabled for this video
@@ -55,13 +55,13 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": "Video main profile goes here...",
+          "video": undefined,
         },
         "ref": null,
-        "rendered": "Video main profile goes here...",
-        "type": "p",
+        "rendered": null,
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -96,9 +96,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <p>
-            Video main profile goes here...
-</p>,
+          <VideoPlayer
+            video={undefined}
+/>,
           <div>
             <p>
                         Chat disabled for this video
@@ -111,13 +111,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": "Video main profile goes here...",
+            "video": undefined,
           },
           "ref": null,
-          "rendered": "Video main profile goes here...",
-          "type": "p",
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,

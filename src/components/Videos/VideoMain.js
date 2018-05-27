@@ -1,5 +1,6 @@
-import React          from 'react';
-import { ChatWindow } from '../Chat';
+import React           from 'react';
+import { ChatWindow }  from '../Chat';
+import { VideoPlayer } from '.';
 
 export default class VideoMain extends React.Component {
   render() {
@@ -17,7 +18,7 @@ export default class VideoMain extends React.Component {
 
     return (
       <div>
-        <p>Video main profile goes here...</p>
+        <VideoPlayer video={this.props.video} />
         { commentsList }
       </div>
     );

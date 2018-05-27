@@ -40,7 +40,7 @@ exports[`class VideoPage extends _react2.default.Component {
     if (this.state.pageLoaded) {
       content =
       _react2.default.createElement(_reactRouterDom.Switch, { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () => _react2.default.createElement(_.VideoMain, { chat: this.state.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () => _react2.default.createElement(_.VideoMain, { video: this.state.video, chat: this.state.chat, displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id/stats', render: () => _react2.default.createElement(_.VideoStats, { __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/videos/:video_id/*', render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }));
 
@@ -51,7 +51,6 @@ exports[`class VideoPage extends _react2.default.Component {
 
     return (
       _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 57 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 58 }, __self: this }, 'Video Page'),
         content));
 
 
@@ -81,36 +80,18 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h2>
-          Video Page
-</h2>,
-        <PageLoading />,
-      ],
+      "children": <PageLoading />,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Video Page",
-        },
-        "ref": null,
-        "rendered": "Video Page",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -119,36 +100,18 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <h2>
-            Video Page
-</h2>,
-          <PageLoading />,
-        ],
+        "children": <PageLoading />,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Video Page",
-          },
-          "ref": null,
-          "rendered": "Video Page",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       "type": "div",
     },
   ],
