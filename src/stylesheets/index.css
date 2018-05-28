@@ -1,5 +1,554 @@
+/* MAD STYLEZ */
+
+/* ========================================================================== */
+/* General */
+/* ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
+  height: 100%;
+  padding: 0 0 100px 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: #182228;
+}
+
+ul {
   padding: 0;
-  font-family: sans-serif;
+  margin: 0;
+  list-style: none;
+}
+
+section {
+  padding: 40px 60px 0 60px;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #C6C6C6;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+h4 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+textarea {
+  resize: none;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: rgb(50, 195, 162);
+}
+
+.message_window {
+  position: relative;
+  margin: 0 60px;
+  border: 3px solid rgb(50, 195, 162);
+}
+
+.message_window p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.message_window a {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 20px;
+}
+
+.message_window a:hover {
+  color: rgb(50, 195, 162);
+}
+
+*::-webkit-scrollbar {
+  background-color: #121B20;
+  border-radius: 4px;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-thumb {
+  background-color: #2b383f;
+  border-radius: 4px;
+}
+
+/* ========================================================================== */
+/* Header */
+/* ========================================================================== */
+
+#headerMain {
+  padding: 20px 60px;
+  background-color: #121B20;
+  border: none;
+  border-radius: 0;
+}
+
+#headerMainLeft {
+  float: left;
+}
+
+#headerMainRight {
+  float: right;
+}
+
+.headerTitle h1 {
+  color: #fff;
+}
+
+.headerTitle span {
+  color: rgb(50, 195, 162);
+}
+
+.headerTitle:hover h1 {
+  color: rgb(50, 195, 162);
+}
+
+.headerTitle:hover span {
+  color: #fff;
+}
+
+#currentUserAvatar {
+  display: inline-block;
+  height: 40px;
+  margin-right: 15px;
+}
+
+#currentUserAvatar img {
+  width: 40px;
+  border-radius: 5px;
+}
+
+.headerTitle h1,
+.headerTitle span,
+.googleButton,
+.btn.btn-default {
+  -o-transition:.4s;
+  -ms-transition:.4s;
+  -moz-transition:.4s;
+  -webkit-transition:.4s;
+  transition:.4s;
+}
+
+.googleButton,
+.btn.btn-default {
+  background-color: #182228;
+  padding: 8px 15px;
+  border: 2px solid rgb(50, 195, 162);
+  border-radius: 25px;
+  font-weight: 300;
+}
+
+.googleButton:hover,
+.btn.btn-default:hover {
+  background-color: rgb(50, 195, 162);
+}
+
+.btn.btn-default {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* ========================================================================== */
+/* Videos Index */
+/* ========================================================================== */
+
+.videosList {
+  margin-top: 30px;
+  margin-right: -4%;
+}
+
+.videoListItem {
+  display: inline-block;
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #2b383f;
+  border-radius: 5px;
+  vertical-align: top;
+}
+
+.videoListItem h3 {
+  margin: 0;
+  padding: 0 0 15px 0;
+}
+
+.videoListItem p {
+  margin: 15px 0;
+}
+
+.videoImgLink:hover {
+  opacity: .75;
+}
+
+.videoImgLink img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.chatEnabled {
+  color: rgb(50, 195, 162);
+}
+
+.chatDisabled {
+  color: #DA3E29;
+}
+
+/* ========================================================================== */
+/* Video Page */
+/* ========================================================================== */
+
+#videoPlayerWrapper {
+  display: inline-block;
+  width: 60%;
+  padding-right: 15px;
+}
+
+#videoPlayerWrapper iframe {
+  width: 100%;
+  margin-bottom: 10px;
+  vertical-align: top;
+}
+
+.videoHeader {
+  overflow: hidden;
+}
+
+.videoHeader h2 {
+  float: left;
+  width: 80%;
+}
+
+.videoHeader a {
+  float: right;
+  margin-top: 10px;
+  color: rgb(50, 195, 162);
+}
+
+.videoHeader a:hover {
+  text-decoration: underline;
+}
+
+#videoPlayerWrapper p {
+  margin: 15px 0;
+  text-align: justify;
+}
+
+.dateTag {
+  color: #CBCBCB;
+  font-style: italic;
+}
+
+/* ========================================================================== */
+/* Video Page Comments List */
+/* ========================================================================== */
+
+#videoCommentsWrapper {
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}
+
+#videoCommentsWrapper .loading {
+  color: #DA3E29;
+}
+
+#videoCommentsList {
+  margin-top: 44px;
+  margin-bottom: 15px;
+  height: 400px;
+  overflow: auto;
+}
+
+.commentListItem {
+  padding: 10px;
+}
+
+.commentListItem:nth-child(odd) {
+  background-color: #2b383f;
+}
+
+.commentListItemHeader {
+  margin-bottom: 10px;
+}
+
+.commentListItemHeader a {
+  color: rgb(50, 195, 162);
+}
+
+.commentListItemHeader a:hover h4 {
+  text-decoration: underline;
+}
+
+.commentListItemHeader img,
+.commentListItemHeader h4 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.commentListItemHeader img {
+  width: 30px;
+  border-radius: 30px;
+  margin-right: 15px;
+}
+
+#newCommentForm {
+  margin-top: 20px;
+}
+
+textarea#form_body.form-control {
+  border: 3px solid rgb(50, 195, 162);
+}
+
+.currentUserListItem {
+  color: #DA3E29;
+}
+
+/* ========================================================================== */
+/* User Profile Header */
+/* ========================================================================== */
+
+#userProfileHeader {
+  margin-bottom: 30px;
+}
+
+#userProfileHeader a {
+  color: rgb(50, 195, 162);
+}
+
+#userProfileHeader a:hover {
+  text-decoration: underline;
+}
+
+#userProfileHeader img,
+#userProfileHeader #userProfileHeaderDetails {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#userProfileHeader img {
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+/* ========================================================================== */
+/* User Profile Comments List */
+/* ========================================================================== */
+
+#userProfileComments {
+  width: 100%;
+  border-top: 1px solid rgb(50, 195, 162);
+  padding-top: 30px;
+}
+
+.userCommentListItem h4 a,
+.userCommentListItem h4 a:hover {
+  color: rgb(50, 195, 162);
+}
+
+.userCommentListItem h4 a:hover {
+  text-decoration: underline;
+}
+
+.userCommentListItem p {
+  max-width: 600px;
+  padding: 12px 0;
+}
+
+/* ========================================================================== */
+/* Stats Page */
+/* ========================================================================== */
+
+#videoStatsWrapper h2 {
+  text-align: center;
+}
+
+#videoStatsWrapper h2 a,
+#videoStatsWrapper h2 a:hover {
+  color: rgb(50, 195, 162);
+}
+
+#videoStatsWrapper h2 a:hover {
+  text-decoration: underline;
+}
+
+#videoStatsWrapper ul {
+  margin: 30px auto 0 auto;
+  font-size: 18px;
+  width: 350px;
+}
+
+#videoStatsWrapper li {
+  padding-top: 20px;
+}
+
+#videoStatsWrapper dt,
+#videoStatsWrapper dd {
+  display: inline-block;
+}
+
+#videoStatsWrapper dt {
+  width: 250px;
+  color: rgb(50, 195, 162);
+}
+
+#videoStatsWrapper dd {
+  font-weight: 300;
+}
+
+
+/* ========================================================================== */
+/* Footer */
+/* ========================================================================== */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  color: #91979a;
+}
+
+footer p {
+  margin: 0;
+  line-height: 40px;
+  font-size: 12px;
+}
+
+
+/* ========================================================================== */
+/* ========================================================================== */
+/* Breakpoints */
+/* ========================================================================== */
+/* ========================================================================== */
+
+@media (max-width: 800px) {
+  #videoPlayerWrapper {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  #videoPlayerWrapper p {
+    display: none;
+  }
+
+  #videoCommentsWrapper {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 680px) {
+  .videosList {
+    margin-right: 0;
+  }
+
+  .videoListItem {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .videoHeader h2 {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+
+  .videoHeader a {
+    display: block;
+    float: none;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 40px 0 40px;
+  }
+
+  #headerMain {
+    padding: 20px 40px;
+  }
+
+  .message_window {
+    margin: 0 40px;
+  }
+
+  #videoStatsWrapper ul {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  #videoStatsWrapper dt,
+  #videoStatsWrapper dd {
+    display: block;
+  }
+
+  #videoStatsWrapper dd {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  section {
+    padding: 40px 20px 0 20px;
+  }
+
+  #headerMain {
+    padding: 20px;
+  }
+
+  .message_window {
+    margin: 0 20px;
+  }
+
+  #headerMainLeft,
+  #headerMainRight {
+    float: none;
+    display: block;
+  }
 }

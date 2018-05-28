@@ -4,7 +4,7 @@ exports[`class NothingHere extends _react2.default.Component {
   render() {
     return (
       _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 6 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }, 'Oops, nothing here!')));
+        _react2.default.createElement('p', { className: 'loading', __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: this }, 'Oops, nothing here!')));
 
 
   }} renders properly 1`] = `
@@ -24,7 +24,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p>
+      "children": <p
+        className="loading"
+>
         Oops, nothing here!
 </p>,
     },
@@ -35,6 +37,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "Oops, nothing here!",
+        "className": "loading",
       },
       "ref": null,
       "rendered": "Oops, nothing here!",
@@ -48,7 +51,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <p>
+        "children": <p
+          className="loading"
+>
           Oops, nothing here!
 </p>,
       },
@@ -59,6 +64,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Oops, nothing here!",
+          "className": "loading",
         },
         "ref": null,
         "rendered": "Oops, nothing here!",

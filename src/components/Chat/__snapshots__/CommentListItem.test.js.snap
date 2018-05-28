@@ -10,18 +10,30 @@ exports[`class CommentListItem extends _react2.default.Component {
 
   }
 
+  componentDidUpdate() {
+    const box = document.getElementById('videoCommentsList');
+    box.scrollTop = box.scrollHeight - box.clientHeight;
+  }
+
   render() {
     const userPath = \`/users/\${this.state.user.id}\`;
+    let currentUserTag = '';
+
+    if (this.props.loggedIn && this.state.user.username === this.props.currentUser.name) {
+      currentUserTag = 'currentUserListItem';
+    }
+
+
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this },
-        _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this },
-          _react2.default.createElement(_reactRouterDom.Link, { to: userPath, __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
-            _react2.default.createElement('img', { src: this.state.user.image_url, alt: this.state.user.id, __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }),
-            _react2.default.createElement('h4', { __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }, this.state.user.username))),
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 30 }, __self: this },
+        _react2.default.createElement('div', { className: 'commentListItemHeader', __source: { fileName: _jsxFileName, lineNumber: 31 }, __self: this },
+          _react2.default.createElement(_reactRouterDom.Link, { to: userPath, __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this },
+            _react2.default.createElement('img', { src: this.state.user.image_url, alt: this.state.user.id, __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this }),
+            _react2.default.createElement('h4', { className: currentUserTag, __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this }, this.state.user.username))),
 
 
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, this.state.comment.message),
-        _react2.default.createElement('small', { __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, this.state.comment.published_at)));
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 37 }, __self: this }, this.state.comment.message),
+        _react2.default.createElement('small', { className: 'dateTag', __source: { fileName: _jsxFileName, lineNumber: 38 }, __self: this }, (0, _misc.formatDate)(this.state.comment.published_at))));
 
 
   }} renders properly 1`] = `
@@ -57,7 +69,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <div>
+        <div
+          className="commentListItemHeader"
+>
           <Link
                     replace={false}
                     to="/users/123"
@@ -66,7 +80,9 @@ ShallowWrapper {
                               alt="123"
                               src="youtube.com"
                     />
-                    <h4>
+                    <h4
+                              className=""
+                    >
                               Alice
                     </h4>
           </Link>
@@ -74,8 +90,10 @@ ShallowWrapper {
         <p>
           hello
 </p>,
-        <small>
-          2018
+        <small
+          className="dateTag"
+>
+          Mon, 01 Jan 2018 00:00:00 GMT
 </small>,
       ],
     },
@@ -94,10 +112,13 @@ ShallowWrapper {
                         alt="123"
                         src="youtube.com"
             />
-            <h4>
+            <h4
+                        className=""
+            >
                         Alice
             </h4>
 </Link>,
+          "className": "commentListItemHeader",
         },
         "ref": null,
         "rendered": Object {
@@ -110,7 +131,9 @@ ShallowWrapper {
                 alt="123"
                 src="youtube.com"
 />,
-              <h4>
+              <h4
+                className=""
+>
                 Alice
 </h4>,
             ],
@@ -137,6 +160,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Alice",
+                "className": "",
               },
               "ref": null,
               "rendered": "Alice",
@@ -163,10 +187,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "2018",
+          "children": "Mon, 01 Jan 2018 00:00:00 GMT",
+          "className": "dateTag",
         },
         "ref": null,
-        "rendered": "2018",
+        "rendered": "Mon, 01 Jan 2018 00:00:00 GMT",
         "type": "small",
       },
     ],
@@ -179,7 +204,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div>
+          <div
+            className="commentListItemHeader"
+>
             <Link
                         replace={false}
                         to="/users/123"
@@ -188,7 +215,9 @@ ShallowWrapper {
                                     alt="123"
                                     src="youtube.com"
                         />
-                        <h4>
+                        <h4
+                                    className=""
+                        >
                                     Alice
                         </h4>
             </Link>
@@ -196,8 +225,10 @@ ShallowWrapper {
           <p>
             hello
 </p>,
-          <small>
-            2018
+          <small
+            className="dateTag"
+>
+            Mon, 01 Jan 2018 00:00:00 GMT
 </small>,
         ],
       },
@@ -216,10 +247,13 @@ ShallowWrapper {
                             alt="123"
                             src="youtube.com"
               />
-              <h4>
+              <h4
+                            className=""
+              >
                             Alice
               </h4>
 </Link>,
+            "className": "commentListItemHeader",
           },
           "ref": null,
           "rendered": Object {
@@ -232,7 +266,9 @@ ShallowWrapper {
                   alt="123"
                   src="youtube.com"
 />,
-                <h4>
+                <h4
+                  className=""
+>
                   Alice
 </h4>,
               ],
@@ -259,6 +295,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Alice",
+                  "className": "",
                 },
                 "ref": null,
                 "rendered": "Alice",
@@ -285,10 +322,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "2018",
+            "children": "Mon, 01 Jan 2018 00:00:00 GMT",
+            "className": "dateTag",
           },
           "ref": null,
-          "rendered": "2018",
+          "rendered": "Mon, 01 Jan 2018 00:00:00 GMT",
           "type": "small",
         },
       ],

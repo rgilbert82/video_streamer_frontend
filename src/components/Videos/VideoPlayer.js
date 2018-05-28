@@ -1,5 +1,6 @@
-import React    from 'react';
-import { Link } from 'react-router-dom';
+import React          from 'react';
+import { Link }       from 'react-router-dom';
+import { formatDate } from '../../services/misc';
 
 export default class VideoPlayer extends React.Component {
   render() {
@@ -7,11 +8,11 @@ export default class VideoPlayer extends React.Component {
     const statsPath = `/videos/${this.props.video.id}/stats`;
 
     return (
-      <div>
-        <div>
+      <div id='videoPlayerWrapper'>
+        <header className='videoHeader'>
           <h2>{this.props.video.title}</h2>
           <Link to={statsPath}>video stats</Link>
-        </div>
+        </header>
         <iframe
           width="560"
           height="315"
@@ -22,7 +23,7 @@ export default class VideoPlayer extends React.Component {
           allowFullScreen >
         </iframe>
         <p>{this.props.video.description}</p>
-        <small>{this.props.video.published_at}</small>
+        <small className='dateTag'>{formatDate(this.props.video.published_at)}</small>
       </div>
     )
   }

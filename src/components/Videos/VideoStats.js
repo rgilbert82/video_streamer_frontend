@@ -41,7 +41,7 @@ export default class VideoStats extends React.Component {
 
     if (this.state.pageLoaded) {
       content = (
-        <div>
+        <div id='videoStatsWrapper'>
           <h2>Stats for <Link to={videoPath}>{this.props.video.title}</Link></h2>
           <ul>
             <li>

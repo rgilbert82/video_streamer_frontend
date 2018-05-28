@@ -1,5 +1,6 @@
-import React    from 'react';
-import { Link } from 'react-router-dom';
+import React          from 'react';
+import { Link }       from 'react-router-dom';
+import { formatDate } from '../../services/misc';
 
 export default class UserCommentListItem extends React.Component {
   constructor(props) {
@@ -15,9 +16,9 @@ export default class UserCommentListItem extends React.Component {
 
     return (
       <div>
+        <h4>From video: <Link to={videoPath}>{this.state.video.title}</Link></h4>
         <p>{this.state.comment.message}</p>
-        <span>From video: <Link to={videoPath}>{this.state.video.title}</Link></span>
-        <small>{this.state.comment.published_at}</small>
+        <small className='dateTag'>{formatDate(this.state.comment.published_at)}</small>
       </div>
     );
   }

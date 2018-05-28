@@ -13,10 +13,10 @@ exports[`class UserCommentListItem extends _react2.default.Component {
     const videoPath = \`/videos/\${this.state.video.id}\`;
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this }, this.state.comment.message),
-        _react2.default.createElement('span', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, 'From video: ', _react2.default.createElement(_reactRouterDom.Link, { to: videoPath, __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, this.state.video.title)),
-        _react2.default.createElement('small', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }, this.state.comment.published_at)));
+      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this },
+        _react2.default.createElement('h4', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, 'From video: ', _react2.default.createElement(_reactRouterDom.Link, { to: videoPath, __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }, this.state.video.title)),
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }, this.state.comment.message),
+        _react2.default.createElement('small', { className: 'dateTag', __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }, (0, _misc.formatDate)(this.state.comment.published_at))));
 
 
   }} renders properly 1`] = `
@@ -50,10 +50,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <p>
-          hello
-</p>,
-        <span>
+        <h4>
           From video: 
           <Link
                     replace={false}
@@ -61,25 +58,19 @@ ShallowWrapper {
           >
                     video title
           </Link>
-</span>,
-        <small>
-          2018
+</h4>,
+        <p>
+          hello
+</p>,
+        <small
+          className="dateTag"
+>
+          Mon, 01 Jan 2018 00:00:00 GMT
 </small>,
       ],
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "hello",
-        },
-        "ref": null,
-        "rendered": "hello",
-        "type": "p",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -112,17 +103,29 @@ ShallowWrapper {
             "type": [Function],
           },
         ],
-        "type": "span",
+        "type": "h4",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "2018",
+          "children": "hello",
         },
         "ref": null,
-        "rendered": "2018",
+        "rendered": "hello",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Mon, 01 Jan 2018 00:00:00 GMT",
+          "className": "dateTag",
+        },
+        "ref": null,
+        "rendered": "Mon, 01 Jan 2018 00:00:00 GMT",
         "type": "small",
       },
     ],
@@ -135,10 +138,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <p>
-            hello
-</p>,
-          <span>
+          <h4>
             From video: 
             <Link
                         replace={false}
@@ -146,25 +146,19 @@ ShallowWrapper {
             >
                         video title
             </Link>
-</span>,
-          <small>
-            2018
+</h4>,
+          <p>
+            hello
+</p>,
+          <small
+            className="dateTag"
+>
+            Mon, 01 Jan 2018 00:00:00 GMT
 </small>,
         ],
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "hello",
-          },
-          "ref": null,
-          "rendered": "hello",
-          "type": "p",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -197,17 +191,29 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": "span",
+          "type": "h4",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "2018",
+            "children": "hello",
           },
           "ref": null,
-          "rendered": "2018",
+          "rendered": "hello",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Mon, 01 Jan 2018 00:00:00 GMT",
+            "className": "dateTag",
+          },
+          "ref": null,
+          "rendered": "Mon, 01 Jan 2018 00:00:00 GMT",
           "type": "small",
         },
       ],

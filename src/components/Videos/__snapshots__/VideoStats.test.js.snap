@@ -38,7 +38,7 @@ exports[`class VideoStats extends _react2.default.Component {
 
     if (this.state.pageLoaded) {
       content =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 44 }, __self: this },
+      _react2.default.createElement('div', { id: 'videoStatsWrapper', __source: { fileName: _jsxFileName, lineNumber: 44 }, __self: this },
         _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 45 }, __self: this }, 'Stats for ', _react2.default.createElement(_reactRouterDom.Link, { to: videoPath, __source: { fileName: _jsxFileName, lineNumber: 45 }, __self: this }, this.props.video.title)),
         _react2.default.createElement('ul', { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
           _react2.default.createElement('li', { __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this },

@@ -21,15 +21,15 @@ exports[`class VideoListItem extends _react2.default.Component {
     let chat_enabled;
 
     if (this.props.video.chat_enabled) {
-      chat_enabled = _react2.default.createElement('aside', { __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, 'live chat is available');
+      chat_enabled = _react2.default.createElement('aside', { className: 'chatEnabled', __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, 'live chat is available');
     } else {
-      chat_enabled = _react2.default.createElement('aside', { __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this }, 'live chat is disabled');
+      chat_enabled = _react2.default.createElement('aside', { className: 'chatDisabled', __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this }, 'live chat is disabled');
     }
 
     return (
       _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 31 }, __self: this },
         _react2.default.createElement(_reactRouterDom.Link, { to: linkPath, __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this }, _react2.default.createElement('h3', { __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this }, this.props.video.content.title)),
-        _react2.default.createElement(_reactRouterDom.Link, { to: linkPath, __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this },
+        _react2.default.createElement(_reactRouterDom.Link, { to: linkPath, className: 'videoImgLink', __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this },
           _react2.default.createElement('img', {
             src: this.props.video.content.thumbnail,
             alt: this.props.video.content.title, __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this })),
@@ -80,6 +80,7 @@ ShallowWrapper {
           </h3>
 </Link>,
         <Link
+          className="videoImgLink"
           replace={false}
           to="/videos/123"
 >
@@ -91,7 +92,9 @@ ShallowWrapper {
         <p>
           description
 </p>,
-        <aside>
+        <aside
+          className="chatEnabled"
+>
           live chat is available
 </aside>,
       ],
@@ -132,6 +135,7 @@ ShallowWrapper {
             alt="title"
             src="http://thumbnail"
 />,
+          "className": "videoImgLink",
           "replace": false,
           "to": "/videos/123",
         },
@@ -167,6 +171,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "live chat is available",
+          "className": "chatEnabled",
         },
         "ref": null,
         "rendered": "live chat is available",
@@ -191,6 +196,7 @@ ShallowWrapper {
             </h3>
 </Link>,
           <Link
+            className="videoImgLink"
             replace={false}
             to="/videos/123"
 >
@@ -202,7 +208,9 @@ ShallowWrapper {
           <p>
             description
 </p>,
-          <aside>
+          <aside
+            className="chatEnabled"
+>
             live chat is available
 </aside>,
         ],
@@ -243,6 +251,7 @@ ShallowWrapper {
               alt="title"
               src="http://thumbnail"
 />,
+            "className": "videoImgLink",
             "replace": false,
             "to": "/videos/123",
           },
@@ -278,6 +287,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "live chat is available",
+            "className": "chatEnabled",
           },
           "ref": null,
           "rendered": "live chat is available",

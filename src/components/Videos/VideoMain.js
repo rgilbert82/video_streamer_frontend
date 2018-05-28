@@ -17,8 +17,8 @@ export default class VideoMain extends React.Component {
       );
     } else {
       commentsList = (
-        <div>
-          <p>Chat disabled for this video</p>
+        <div id='videoCommentsWrapper'>
+          <p className='loading'>Chat disabled for this video</p>
         </div>
       );
     }

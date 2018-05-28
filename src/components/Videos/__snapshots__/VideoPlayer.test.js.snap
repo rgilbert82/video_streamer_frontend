@@ -6,10 +6,10 @@ exports[`class VideoPlayer extends _react2.default.Component {
     const statsPath = \`/videos/\${this.props.video.id}/stats\`;
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
-        _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this },
-          _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this }, this.props.video.title),
-          _react2.default.createElement(_reactRouterDom.Link, { to: statsPath, __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }, 'video stats')),
+      _react2.default.createElement('div', { id: 'videoPlayerWrapper', __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this },
+        _react2.default.createElement('header', { className: 'videoHeader', __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this },
+          _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }, this.props.video.title),
+          _react2.default.createElement(_reactRouterDom.Link, { to: statsPath, __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this }, 'video stats')),
 
         _react2.default.createElement('iframe', {
           width: '560',
@@ -18,10 +18,10 @@ exports[`class VideoPlayer extends _react2.default.Component {
           title: this.props.video.id,
           frameBorder: '0',
           allow: 'autoplay; encrypted-media',
-          allowFullScreen: true, __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: this }),
+          allowFullScreen: true, __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this }),
 
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, this.props.video.description),
-        _react2.default.createElement('small', { __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, this.props.video.published_at)));
+        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, this.props.video.description),
+        _react2.default.createElement('small', { className: 'dateTag', __source: { fileName: _jsxFileName, lineNumber: 26 }, __self: this }, (0, _misc.formatDate)(this.props.video.published_at))));
 
 
   }} renders properly 1`] = `
@@ -51,7 +51,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <div>
+        <header
+          className="videoHeader"
+>
           <h2>
                     Title
           </h2>
@@ -61,7 +63,7 @@ ShallowWrapper {
           >
                     video stats
           </Link>
-</div>,
+</header>,
         <iframe
           allow="autoplay; encrypted-media"
           allowFullScreen={true}
@@ -74,10 +76,13 @@ ShallowWrapper {
         <p>
           Description
 </p>,
-        <small>
-          2018
+        <small
+          className="dateTag"
+>
+          Mon, 01 Jan 2018 00:00:00 GMT
 </small>,
       ],
+      "id": "videoPlayerWrapper",
     },
     "ref": null,
     "rendered": Array [
@@ -97,6 +102,7 @@ ShallowWrapper {
               video stats
 </Link>,
           ],
+          "className": "videoHeader",
         },
         "ref": null,
         "rendered": Array [
@@ -125,7 +131,7 @@ ShallowWrapper {
             "type": [Function],
           },
         ],
-        "type": "div",
+        "type": "header",
       },
       Object {
         "instance": null,
@@ -160,10 +166,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "2018",
+          "children": "Mon, 01 Jan 2018 00:00:00 GMT",
+          "className": "dateTag",
         },
         "ref": null,
-        "rendered": "2018",
+        "rendered": "Mon, 01 Jan 2018 00:00:00 GMT",
         "type": "small",
       },
     ],
@@ -176,7 +183,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div>
+          <header
+            className="videoHeader"
+>
             <h2>
                         Title
             </h2>
@@ -186,7 +195,7 @@ ShallowWrapper {
             >
                         video stats
             </Link>
-</div>,
+</header>,
           <iframe
             allow="autoplay; encrypted-media"
             allowFullScreen={true}
@@ -199,10 +208,13 @@ ShallowWrapper {
           <p>
             Description
 </p>,
-          <small>
-            2018
+          <small
+            className="dateTag"
+>
+            Mon, 01 Jan 2018 00:00:00 GMT
 </small>,
         ],
+        "id": "videoPlayerWrapper",
       },
       "ref": null,
       "rendered": Array [
@@ -222,6 +234,7 @@ ShallowWrapper {
                 video stats
 </Link>,
             ],
+            "className": "videoHeader",
           },
           "ref": null,
           "rendered": Array [
@@ -250,7 +263,7 @@ ShallowWrapper {
               "type": [Function],
             },
           ],
-          "type": "div",
+          "type": "header",
         },
         Object {
           "instance": null,
@@ -285,10 +298,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "2018",
+            "children": "Mon, 01 Jan 2018 00:00:00 GMT",
+            "className": "dateTag",
           },
           "ref": null,
-          "rendered": "2018",
+          "rendered": "Mon, 01 Jan 2018 00:00:00 GMT",
           "type": "small",
         },
       ],

@@ -66,7 +66,7 @@ exports[`class VideoPage extends _react2.default.Component {
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 73 }, __self: this },
+      _react2.default.createElement('section', { __source: { fileName: _jsxFileName, lineNumber: 73 }, __self: this },
         content));
 
 
@@ -108,7 +108,7 @@ ShallowWrapper {
       "rendered": null,
       "type": [Function],
     },
-    "type": "div",
+    "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -128,7 +128,7 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      "type": "div",
+      "type": "section",
     },
   ],
   Symbol(enzyme.__options__): Object {

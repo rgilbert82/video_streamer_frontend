@@ -40,7 +40,7 @@ exports[`class VideosIndex extends _react2.default.Component {
       if (this.state.videos.length > 0) {
         videos = this.state.videos.map(video => {
           return (
-            _react2.default.createElement('li', { key: video.content.id, __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
+            _react2.default.createElement('li', { key: video.content.id, className: 'videoListItem', __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
               _react2.default.createElement(_.VideoListItem, { video: video, __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this })));
 
 
@@ -48,15 +48,15 @@ exports[`class VideosIndex extends _react2.default.Component {
       } else {
         videos =
         _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this },
-          _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this }, 'There are no videos here...'));
+          _react2.default.createElement('p', { className: 'loading', __source: { fileName: _jsxFileName, lineNumber: 54 }, __self: this }, 'There are no videos here...'));
 
 
       }
 
       content =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 60 }, __self: this },
+      _react2.default.createElement('section', { __source: { fileName: _jsxFileName, lineNumber: 60 }, __self: this },
         _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 61 }, __self: this }, 'Select a video stream'),
-        _react2.default.createElement('ul', { __source: { fileName: _jsxFileName, lineNumber: 62 }, __self: this },
+        _react2.default.createElement('ul', { className: 'videosList', __source: { fileName: _jsxFileName, lineNumber: 62 }, __self: this },
           videos));
 
 
@@ -67,7 +67,6 @@ exports[`class VideosIndex extends _react2.default.Component {
 
     return (
       _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 72 }, __self: this },
-        _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 73 }, __self: this }, 'Videos index'),
         content));
 
 
@@ -90,36 +89,18 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h2>
-          Videos index
-</h2>,
-        <PageLoading />,
-      ],
+      "children": <PageLoading />,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Videos index",
-        },
-        "ref": null,
-        "rendered": "Videos index",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -128,36 +109,18 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <h2>
-            Videos index
-</h2>,
-          <PageLoading />,
-        ],
+        "children": <PageLoading />,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Videos index",
-          },
-          "ref": null,
-          "rendered": "Videos index",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       "type": "div",
     },
   ],

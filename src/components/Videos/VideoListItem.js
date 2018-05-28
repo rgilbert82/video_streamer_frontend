@@ -22,15 +22,15 @@ export default class VideoListItem extends React.Component {
     let   chat_enabled;
 
     if (this.props.video.chat_enabled) {
-      chat_enabled = <aside>live chat is available</aside>;
+      chat_enabled = <aside className='chatEnabled'>live chat is available</aside>;
     } else {
-      chat_enabled = <aside>live chat is disabled</aside>;
+      chat_enabled = <aside className='chatDisabled'>live chat is disabled</aside>;
     }
 
     return (
       <div>
         <Link to={linkPath}><h3>{this.props.video.content.title}</h3></Link>
-        <Link to={linkPath}>
+        <Link to={linkPath} className='videoImgLink'>
           <img
             src={this.props.video.content.thumbnail}
             alt={this.props.video.content.title}

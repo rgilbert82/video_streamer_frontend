@@ -56,9 +56,9 @@ export default class UserPage extends React.Component {
     }
 
     return (
-      <div>
+      <section>
         { content }
-      </div>
+      </section>
     );
   }
 }

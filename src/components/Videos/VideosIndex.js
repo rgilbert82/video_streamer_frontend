@@ -43,7 +43,7 @@ export default class VideosIndex extends React.Component {
       if (this.state.videos.length > 0) {
         videos = this.state.videos.map((video) => {
           return (
-            <li key={video.content.id}>
+            <li key={video.content.id} className='videoListItem'>
               <VideoListItem video={video} />
             </li>
           );
@@ -51,18 +51,18 @@ export default class VideosIndex extends React.Component {
       } else {
         videos = (
           <div>
-            <p>There are no videos here...</p>
+            <p className='loading'>There are no videos here...</p>
           </div>
         );
       }
 
       content = (
-        <div>
+        <section>
           <h2>Select a video stream</h2>
-          <ul>
+          <ul className='videosList'>
             { videos }
           </ul>
-        </div>
+        </section>
       );
     } else {
       content = <PageLoading />;
@@ -70,7 +70,6 @@ export default class VideosIndex extends React.Component {
 
     return (
       <div>
-        <h2>Videos index</h2>
         { content }
       </div>
     );

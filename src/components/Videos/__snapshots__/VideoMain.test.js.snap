@@ -15,8 +15,8 @@ exports[`class VideoMain extends _react2.default.Component {
 
     } else {
       commentsList =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }, 'Chat disabled for this video'));
+      _react2.default.createElement('div', { id: 'videoCommentsWrapper', __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
+        _react2.default.createElement('p', { className: 'loading', __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }, 'Chat disabled for this video'));
 
 
     }
@@ -50,8 +50,12 @@ ShallowWrapper {
         <VideoPlayer
           video={undefined}
 />,
-        <div>
-          <p>
+        <div
+          id="videoCommentsWrapper"
+>
+          <p
+                    className="loading"
+          >
                     Chat disabled for this video
           </p>
 </div>,
@@ -75,9 +79,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <p>
+          "children": <p
+            className="loading"
+>
             Chat disabled for this video
 </p>,
+          "id": "videoCommentsWrapper",
         },
         "ref": null,
         "rendered": Object {
@@ -86,6 +93,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Chat disabled for this video",
+            "className": "loading",
           },
           "ref": null,
           "rendered": "Chat disabled for this video",
@@ -106,8 +114,12 @@ ShallowWrapper {
           <VideoPlayer
             video={undefined}
 />,
-          <div>
-            <p>
+          <div
+            id="videoCommentsWrapper"
+>
+            <p
+                        className="loading"
+            >
                         Chat disabled for this video
             </p>
 </div>,
@@ -131,9 +143,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <p>
+            "children": <p
+              className="loading"
+>
               Chat disabled for this video
 </p>,
+            "id": "videoCommentsWrapper",
           },
           "ref": null,
           "rendered": Object {
@@ -142,6 +157,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Chat disabled for this video",
+              "className": "loading",
             },
             "ref": null,
             "rendered": "Chat disabled for this video",

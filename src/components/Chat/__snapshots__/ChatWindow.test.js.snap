@@ -77,14 +77,18 @@ exports[`class ChatWindow extends _react2.default.Component {
     } else {
       commentForm =
       _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 82 }, __self: this },
-        _react2.default.createElement('p', { __source: { fileName: _jsxFileName, lineNumber: 83 }, __self: this }, 'You must be logged in to comment'));
+        _react2.default.createElement('p', { className: 'loading', __source: { fileName: _jsxFileName, lineNumber: 83 }, __self: this }, 'You must be logged in to comment'));
 
 
     }
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 89 }, __self: this },
-        _react2.default.createElement(_.CommentsList, { messages: this.state.messages, __source: { fileName: _jsxFileName, lineNumber: 90 }, __self: this }),
+      _react2.default.createElement('div', { id: 'videoCommentsWrapper', __source: { fileName: _jsxFileName, lineNumber: 89 }, __self: this },
+        _react2.default.createElement(_.CommentsList, {
+          messages: this.state.messages,
+          loggedIn: this.props.loggedIn,
+          currentUser: this.props.currentUser, __source: { fileName: _jsxFileName, lineNumber: 90 }, __self: this }),
+
         commentForm));
 
 
@@ -109,14 +113,19 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <CommentsList
+          currentUser={undefined}
+          loggedIn={undefined}
           messages={Array []}
 />,
         <div>
-          <p>
+          <p
+                    className="loading"
+          >
                     You must be logged in to comment
           </p>
 </div>,
       ],
+      "id": "videoCommentsWrapper",
     },
     "ref": null,
     "rendered": Array [
@@ -125,6 +134,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "currentUser": undefined,
+          "loggedIn": undefined,
           "messages": Array [],
         },
         "ref": null,
@@ -136,7 +147,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <p>
+          "children": <p
+            className="loading"
+>
             You must be logged in to comment
 </p>,
         },
@@ -147,6 +160,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "You must be logged in to comment",
+            "className": "loading",
           },
           "ref": null,
           "rendered": "You must be logged in to comment",
@@ -165,14 +179,19 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <CommentsList
+            currentUser={undefined}
+            loggedIn={undefined}
             messages={Array []}
 />,
           <div>
-            <p>
+            <p
+                        className="loading"
+            >
                         You must be logged in to comment
             </p>
 </div>,
         ],
+        "id": "videoCommentsWrapper",
       },
       "ref": null,
       "rendered": Array [
@@ -181,6 +200,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "currentUser": undefined,
+            "loggedIn": undefined,
             "messages": Array [],
           },
           "ref": null,
@@ -192,7 +213,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <p>
+            "children": <p
+              className="loading"
+>
               You must be logged in to comment
 </p>,
           },
@@ -203,6 +226,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "You must be logged in to comment",
+              "className": "loading",
             },
             "ref": null,
             "rendered": "You must be logged in to comment",

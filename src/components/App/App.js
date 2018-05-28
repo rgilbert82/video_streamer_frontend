@@ -74,6 +74,10 @@ export default class App extends React.Component {
           currentUser={this.state.currentUser}
           displayMessage={this.displayMessage}
         />
+
+        <footer>
+          <p>© NASA. All Rights Reserved.</p>
+        </footer>
       </div>
     );
   }

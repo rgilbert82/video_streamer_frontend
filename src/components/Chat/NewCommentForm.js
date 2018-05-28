@@ -29,7 +29,7 @@ export default class NewCommentForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id='newCommentForm'>
         <FormGroup>
           <FormControl
             componentClass="textarea"

@@ -4,7 +4,7 @@ export default class PageLoading extends React.Component {
   render() {
     return (
       <div>
-        <p>Loading...</p>
+        <p className='loading'>Loading...</p>
       </div>
     );
   }

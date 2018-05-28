@@ -5,15 +5,14 @@ export default class UserCommentsList extends React.Component {
   render() {
     const comments = this.props.comments.map((commentObj) => {
       return (
-        <li key={commentObj.comment.id}>
+        <li key={commentObj.comment.id} className='commentListItem userCommentListItem'>
           <UserCommentListItem commentObj={commentObj} />
         </li>
       );
     });
 
     return (
-      <div>
-        <h3>Chat Comments</h3>
+      <div id='userProfileComments'>
         <ul>
           { comments }
         </ul>

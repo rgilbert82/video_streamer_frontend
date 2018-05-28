@@ -32,7 +32,7 @@ export default class VideoPage extends React.Component {
     return getVideoApi(this.props.match.params.video_id)
       .then((data) => {
         this.setState({
-          video:      data.video, 
+          video:      data.video,
           chat:       data.chat,
           pageLoaded: true });
       }).catch(() => {
@@ -70,9 +70,9 @@ export default class VideoPage extends React.Component {
     }
 
     return (
-      <div>
+      <section>
         { content }
-      </div>
+      </section>
     );
   }
 }

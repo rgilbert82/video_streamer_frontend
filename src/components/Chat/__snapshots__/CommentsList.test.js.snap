@@ -4,15 +4,19 @@ exports[`class CommentsList extends _react2.default.Component {
   render() {
     let messages = this.props.messages.map(message => {
       return (
-        _react2.default.createElement('li', { key: message.comment.id, __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this },
-          _react2.default.createElement(_.CommentListItem, { message: message, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this })));
+        _react2.default.createElement('li', { key: message.comment.id, className: 'commentListItem', __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this },
+          _react2.default.createElement(_.CommentListItem, {
+            message: message,
+            loggedIn: this.props.loggedIn,
+            currentUser: this.props.currentUser, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this })));
+
 
 
     });
 
     return (
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: this },
-        _react2.default.createElement('ul', { __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this },
+      _react2.default.createElement('div', { id: 'videoCommentsList', __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
+        _react2.default.createElement('ul', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
           messages)));
 
 
@@ -40,6 +44,7 @@ ShallowWrapper {
       "children": <ul>
         
 </ul>,
+      "id": "videoCommentsList",
     },
     "ref": null,
     "rendered": Object {
@@ -64,6 +69,7 @@ ShallowWrapper {
         "children": <ul>
           
 </ul>,
+        "id": "videoCommentsList",
       },
       "ref": null,
       "rendered": Object {

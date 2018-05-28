@@ -4,7 +4,7 @@ export default class NothingHere extends React.Component {
   render() {
     return (
       <div>
-        <p>Oops, nothing here!</p>
+        <p className='loading'>Oops, nothing here!</p>
       </div>
     );
   }

@@ -8,38 +8,45 @@ exports[`class Header extends _react2.default.Component {
     if (this.props.loggedIn) {
       googleButton =
       _react2.default.createElement(_reactGoogleLogin.GoogleLogout, {
+        className: 'googleButton',
         buttonText: 'Logout',
-        onLogoutSuccess: this.props.googleLogout, __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this });
+        onLogoutSuccess: this.props.googleLogout, __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this });
 
 
 
       showCurrentUser =
-      _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
+      _react2.default.createElement('div', { id: 'currentUserAvatar', __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this },
         _react2.default.createElement('img', {
           src: this.props.currentUser.imageUrl,
-          alt: this.props.currentUser.name + ' avatar', __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }),
+          alt: this.props.currentUser.name + ' avatar', __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: this }));
 
-        _react2.default.createElement('h3', { __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, this.props.currentUser.name));
 
 
     } else {
       googleButton =
       _react2.default.createElement(_reactGoogleLogin.GoogleLogin, {
+        className: 'googleButton',
         clientId: process.env.REACT_APP_CLIENT_ID,
         isSignedIn: 'true',
         buttonText: 'Login with Google',
         onSuccess: this.props.googleLogin,
         onFailure: this.props.loginFailure,
-        scope: 'https://www.googleapis.com/auth/youtube', __source: { fileName: _jsxFileName, lineNumber: 29 }, __self: this });
+        scope: 'https://www.googleapis.com/auth/youtube', __source: { fileName: _jsxFileName, lineNumber: 30 }, __self: this });
 
 
     }
 
     return (
-      _react2.default.createElement('header', { __source: { fileName: _jsxFileName, lineNumber: 41 }, __self: this },
-        _react2.default.createElement(_reactRouterDom.Link, { to: '/', __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, _react2.default.createElement('h1', { __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, 'NASA TV')),
-        showCurrentUser,
-        googleButton));
+      _react2.default.createElement(_reactBootstrap.Navbar, { id: 'headerMain', __source: { fileName: _jsxFileName, lineNumber: 43 }, __self: this },
+        _react2.default.createElement('div', { id: 'headerMainLeft', __source: { fileName: _jsxFileName, lineNumber: 44 }, __self: this },
+          _react2.default.createElement(_reactRouterDom.Link, { to: '/', className: 'headerTitle', __source: { fileName: _jsxFileName, lineNumber: 45 }, __self: this },
+            _react2.default.createElement('h1', { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this }, 'NASA ', _react2.default.createElement('span', { __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this }, 'TV')))),
+
+
+        _react2.default.createElement('div', { id: 'headerMainRight', __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this },
+          showCurrentUser,
+          googleButton)));
+
 
 
   }} renders properly 1`] = `
@@ -57,151 +64,90 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
+      "bsStyle": "default",
       "children": Array [
-        <Link
-          replace={false}
-          to="/"
+        <div
+          id="headerMainLeft"
 >
-          <h1>
-                    NASA TV
-          </h1>
-</Link>,
-        undefined,
-        <t
-          accessType="online"
-          buttonText="Login with Google"
-          clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
-          cookiePolicy="single_host_origin"
-          disabledStyle={
-                    Object {
-                              "opacity": 0.6,
-                            }
-          }
-          fetchBasicProfile={true}
-          isSignedIn="true"
-          jsSrc="https://apis.google.com/js/client:platform.js"
-          onFailure={undefined}
-          onRequest={[Function]}
-          onSuccess={undefined}
-          prompt=""
-          scope="https://www.googleapis.com/auth/youtube"
-          tag="button"
-          type="button"
-          uxMode="popup"
-/>,
+          <Link
+                    className="headerTitle"
+                    replace={false}
+                    to="/"
+          >
+                    <h1>
+                              NASA 
+                              <span>
+                                        TV
+                              </span>
+                    </h1>
+          </Link>
+</div>,
+        <div
+          id="headerMainRight"
+>
+          <t
+                    accessType="online"
+                    buttonText="Login with Google"
+                    className="googleButton"
+                    clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
+                    cookiePolicy="single_host_origin"
+                    disabledStyle={
+                              Object {
+                                        "opacity": 0.6,
+                                      }
+                    }
+                    fetchBasicProfile={true}
+                    isSignedIn="true"
+                    jsSrc="https://apis.google.com/js/client:platform.js"
+                    onFailure={undefined}
+                    onRequest={[Function]}
+                    onSuccess={undefined}
+                    prompt=""
+                    scope="https://www.googleapis.com/auth/youtube"
+                    tag="button"
+                    type="button"
+                    uxMode="popup"
+          />
+</div>,
       ],
+      "id": "headerMain",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "children": <h1>
-            NASA TV
-</h1>,
-          "replace": false,
-          "to": "/",
+          "children": <Link
+            className="headerTitle"
+            replace={false}
+            to="/"
+>
+            <h1>
+                        NASA 
+                        <span>
+                                    TV
+                        </span>
+            </h1>
+</Link>,
+          "id": "headerMainLeft",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "NASA TV",
-          },
-          "ref": null,
-          "rendered": "NASA TV",
-          "type": "h1",
-        },
-        "type": [Function],
-      },
-      undefined,
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "accessType": "online",
-          "buttonText": "Login with Google",
-          "clientId": "392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com",
-          "cookiePolicy": "single_host_origin",
-          "disabledStyle": Object {
-            "opacity": 0.6,
-          },
-          "fetchBasicProfile": true,
-          "isSignedIn": "true",
-          "jsSrc": "https://apis.google.com/js/client:platform.js",
-          "onFailure": undefined,
-          "onRequest": [Function],
-          "onSuccess": undefined,
-          "prompt": "",
-          "scope": "https://www.googleapis.com/auth/youtube",
-          "tag": "button",
-          "type": "button",
-          "uxMode": "popup",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "header",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <Link
-            replace={false}
-            to="/"
->
-            <h1>
-                        NASA TV
-            </h1>
-</Link>,
-          undefined,
-          <t
-            accessType="online"
-            buttonText="Login with Google"
-            clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
-            cookiePolicy="single_host_origin"
-            disabledStyle={
-                        Object {
-                                    "opacity": 0.6,
-                                  }
-            }
-            fetchBasicProfile={true}
-            isSignedIn="true"
-            jsSrc="https://apis.google.com/js/client:platform.js"
-            onFailure={undefined}
-            onRequest={[Function]}
-            onSuccess={undefined}
-            prompt=""
-            scope="https://www.googleapis.com/auth/youtube"
-            tag="button"
-            type="button"
-            uxMode="popup"
-/>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
           "nodeType": "class",
           "props": Object {
             "children": <h1>
-              NASA TV
+              NASA 
+              <span>
+                            TV
+              </span>
 </h1>,
+            "className": "headerTitle",
             "replace": false,
             "to": "/",
           },
@@ -211,45 +157,300 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "NASA TV",
+              "children": Array [
+                "NASA ",
+                <span>
+                  TV
+</span>,
+              ],
             },
             "ref": null,
-            "rendered": "NASA TV",
+            "rendered": Array [
+              "NASA ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "TV",
+                },
+                "ref": null,
+                "rendered": "TV",
+                "type": "span",
+              },
+            ],
             "type": "h1",
           },
           "type": [Function],
         },
-        undefined,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            undefined,
+            <t
+              accessType="online"
+              buttonText="Login with Google"
+              className="googleButton"
+              clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
+              cookiePolicy="single_host_origin"
+              disabledStyle={
+                            Object {
+                                          "opacity": 0.6,
+                                        }
+              }
+              fetchBasicProfile={true}
+              isSignedIn="true"
+              jsSrc="https://apis.google.com/js/client:platform.js"
+              onFailure={undefined}
+              onRequest={[Function]}
+              onSuccess={undefined}
+              prompt=""
+              scope="https://www.googleapis.com/auth/youtube"
+              tag="button"
+              type="button"
+              uxMode="popup"
+/>,
+          ],
+          "id": "headerMainRight",
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessType": "online",
+              "buttonText": "Login with Google",
+              "className": "googleButton",
+              "clientId": "392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com",
+              "cookiePolicy": "single_host_origin",
+              "disabledStyle": Object {
+                "opacity": 0.6,
+              },
+              "fetchBasicProfile": true,
+              "isSignedIn": "true",
+              "jsSrc": "https://apis.google.com/js/client:platform.js",
+              "onFailure": undefined,
+              "onRequest": [Function],
+              "onSuccess": undefined,
+              "prompt": "",
+              "scope": "https://www.googleapis.com/auth/youtube",
+              "tag": "button",
+              "type": "button",
+              "uxMode": "popup",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "bsStyle": "default",
+        "children": Array [
+          <div
+            id="headerMainLeft"
+>
+            <Link
+                        className="headerTitle"
+                        replace={false}
+                        to="/"
+            >
+                        <h1>
+                                    NASA 
+                                    <span>
+                                                TV
+                                    </span>
+                        </h1>
+            </Link>
+</div>,
+          <div
+            id="headerMainRight"
+>
+            <t
+                        accessType="online"
+                        buttonText="Login with Google"
+                        className="googleButton"
+                        clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
+                        cookiePolicy="single_host_origin"
+                        disabledStyle={
+                                    Object {
+                                                "opacity": 0.6,
+                                              }
+                        }
+                        fetchBasicProfile={true}
+                        isSignedIn="true"
+                        jsSrc="https://apis.google.com/js/client:platform.js"
+                        onFailure={undefined}
+                        onRequest={[Function]}
+                        onSuccess={undefined}
+                        prompt=""
+                        scope="https://www.googleapis.com/auth/youtube"
+                        tag="button"
+                        type="button"
+                        uxMode="popup"
+            />
+</div>,
+        ],
+        "id": "headerMain",
+      },
+      "ref": null,
+      "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "accessType": "online",
-            "buttonText": "Login with Google",
-            "clientId": "392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com",
-            "cookiePolicy": "single_host_origin",
-            "disabledStyle": Object {
-              "opacity": 0.6,
-            },
-            "fetchBasicProfile": true,
-            "isSignedIn": "true",
-            "jsSrc": "https://apis.google.com/js/client:platform.js",
-            "onFailure": undefined,
-            "onRequest": [Function],
-            "onSuccess": undefined,
-            "prompt": "",
-            "scope": "https://www.googleapis.com/auth/youtube",
-            "tag": "button",
-            "type": "button",
-            "uxMode": "popup",
+            "children": <Link
+              className="headerTitle"
+              replace={false}
+              to="/"
+>
+              <h1>
+                            NASA 
+                            <span>
+                                          TV
+                            </span>
+              </h1>
+</Link>,
+            "id": "headerMainLeft",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <h1>
+                NASA 
+                <span>
+                                TV
+                </span>
+</h1>,
+              "className": "headerTitle",
+              "replace": false,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "NASA ",
+                  <span>
+                    TV
+</span>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "NASA ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "TV",
+                  },
+                  "ref": null,
+                  "rendered": "TV",
+                  "type": "span",
+                },
+              ],
+              "type": "h1",
+            },
+            "type": [Function],
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              undefined,
+              <t
+                accessType="online"
+                buttonText="Login with Google"
+                className="googleButton"
+                clientId="392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com"
+                cookiePolicy="single_host_origin"
+                disabledStyle={
+                                Object {
+                                                "opacity": 0.6,
+                                              }
+                }
+                fetchBasicProfile={true}
+                isSignedIn="true"
+                jsSrc="https://apis.google.com/js/client:platform.js"
+                onFailure={undefined}
+                onRequest={[Function]}
+                onSuccess={undefined}
+                prompt=""
+                scope="https://www.googleapis.com/auth/youtube"
+                tag="button"
+                type="button"
+                uxMode="popup"
+/>,
+            ],
+            "id": "headerMainRight",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "accessType": "online",
+                "buttonText": "Login with Google",
+                "className": "googleButton",
+                "clientId": "392883726580-8bjc1khlt1j3n06li5tnb3ua1ao7vadk.apps.googleusercontent.com",
+                "cookiePolicy": "single_host_origin",
+                "disabledStyle": Object {
+                  "opacity": 0.6,
+                },
+                "fetchBasicProfile": true,
+                "isSignedIn": "true",
+                "jsSrc": "https://apis.google.com/js/client:platform.js",
+                "onFailure": undefined,
+                "onRequest": [Function],
+                "onSuccess": undefined,
+                "prompt": "",
+                "scope": "https://www.googleapis.com/auth/youtube",
+                "tag": "button",
+                "type": "button",
+                "uxMode": "popup",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
       ],
-      "type": "header",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

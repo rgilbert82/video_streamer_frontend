@@ -80,14 +80,18 @@ export default class ChatWindow extends React.Component {
     } else {
       commentForm = (
         <div>
-          <p>You must be logged in to comment</p>
+          <p className='loading'>You must be logged in to comment</p>
         </div>
       );
     }
 
     return (
-      <div>
-        <CommentsList   messages={this.state.messages} />
+      <div id='videoCommentsWrapper'>
+        <CommentsList
+          messages={this.state.messages}
+          loggedIn={this.props.loggedIn}
+          currentUser={this.props.currentUser}
+        />
         { commentForm }
       </div>
     );
