@@ -9,22 +9,31 @@ export default class Main extends React.Component {
     return (
       <div id='main'>
         <Switch>
-          <Route exact path='/' render={ () =>
-            <VideosIndex displayMessage={this.props.displayMessage} />
+          <Route
+            exact path='/'
+            render={ () => <VideosIndex displayMessage={this.props.displayMessage} />
           }/>
 
-          <Route path='/videos/:video_id' render={ (props) =>
-            <VideoPage {...props}
+          <Route
+            path='/videos/:video_id'
+            render={ (props) => <VideoPage {...props}
               loggedIn={this.props.loggedIn}
               currentUser={this.props.currentUser}
-              displayMessage={this.props.displayMessage} />
-            }/>
-
-          <Route exact path='/users/:user_id' render={ (props) =>
-            <UserPage {...props} displayMessage={this.props.displayMessage} />
+              displayMessage={this.props.displayMessage}
+            />
           }/>
 
-          <Route path='/*' render={ () => <NothingHere /> } />
+          <Route
+            exact path='/users/:user_id'
+            render={ (props) => <UserPage {...props}
+              displayMessage={this.props.displayMessage}
+            />
+          }/>
+
+          <Route
+            path='/*'
+            render={ () => <NothingHere /> }
+          />
         </Switch>
       </div>
     );

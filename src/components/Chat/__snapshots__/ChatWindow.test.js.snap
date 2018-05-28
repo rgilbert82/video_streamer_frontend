@@ -97,7 +97,18 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ChatWindow
+    chat={
+        Object {
+            "id": "1",
+          }
+    }
+    currentUser={
+        Object {
+            "accessToken": "12345",
+          }
+    }
     displayMessage={[Function]}
+    loggedIn={false}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -113,8 +124,12 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <CommentsList
-          currentUser={undefined}
-          loggedIn={undefined}
+          currentUser={
+                    Object {
+                              "accessToken": "12345",
+                            }
+          }
+          loggedIn={false}
           messages={Array []}
 />,
         <div>
@@ -134,8 +149,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "currentUser": undefined,
-          "loggedIn": undefined,
+          "currentUser": Object {
+            "accessToken": "12345",
+          },
+          "loggedIn": false,
           "messages": Array [],
         },
         "ref": null,
@@ -179,8 +196,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <CommentsList
-            currentUser={undefined}
-            loggedIn={undefined}
+            currentUser={
+                        Object {
+                                    "accessToken": "12345",
+                                  }
+            }
+            loggedIn={false}
             messages={Array []}
 />,
           <div>
@@ -200,8 +221,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "currentUser": undefined,
-            "loggedIn": undefined,
+            "currentUser": Object {
+              "accessToken": "12345",
+            },
+            "loggedIn": false,
             "messages": Array [],
           },
           "ref": null,

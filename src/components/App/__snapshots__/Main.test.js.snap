@@ -5,22 +5,31 @@ exports[`class Main extends _react2.default.Component {
     return (
       _react2.default.createElement('div', { id: 'main', __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
         _react2.default.createElement(_reactRouterDom.Switch, { __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this },
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: () =>
-            _react2.default.createElement(_Videos.VideosIndex, { displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this }),
+          _react2.default.createElement(_reactRouterDom.Route, {
+            exact: true, path: '/',
+            render: () => _react2.default.createElement(_Videos.VideosIndex, { displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this }),
 
 
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/videos/:video_id', render: props =>
-            _react2.default.createElement(_Videos.VideoPage, Object.assign({}, props, {
+          _react2.default.createElement(_reactRouterDom.Route, {
+            path: '/videos/:video_id',
+            render: props => _react2.default.createElement(_Videos.VideoPage, Object.assign({}, props, {
               loggedIn: this.props.loggedIn,
               currentUser: this.props.currentUser,
-              displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this })), __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this }),
+              displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this })), __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this }),
 
 
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/users/:user_id', render: props =>
-            _react2.default.createElement(_Users.UserPage, Object.assign({}, props, { displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this })), __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this }),
+
+          _react2.default.createElement(_reactRouterDom.Route, {
+            exact: true, path: '/users/:user_id',
+            render: props => _react2.default.createElement(_Users.UserPage, Object.assign({}, props, {
+              displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: this })), __source: { fileName: _jsxFileName, lineNumber: 26 }, __self: this }),
 
 
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/*', render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this }))));
+
+          _react2.default.createElement(_reactRouterDom.Route, {
+            path: '/*',
+            render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 35 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 33 }, __self: this }))));
+
 
 
 

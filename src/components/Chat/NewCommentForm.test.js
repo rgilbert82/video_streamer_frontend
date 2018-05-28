@@ -3,13 +3,32 @@ import { shallow }        from 'enzyme';
 import { NewCommentForm } from '.';
 
 describe(NewCommentForm, () => {
+  const createMock = jest.fn();
   let component;
 
   beforeEach(() => {
-    component = shallow(<NewCommentForm displayMessage={jest.fn()}/>);
+    component = shallow(<NewCommentForm displayMessage={jest.fn()} createNewComment={createMock} />);
   });
 
   it('renders properly', () => {
     expect(component).toMatchSnapshot();
+  });
+
+  it("updates the body", () => {
+    expect(component.state('body')).toEqual('');
+    component.find('#form_body').simulate('change', { target: { value: 'Hello World' }});
+    expect(component.state('body')).toEqual('Hello World');
+  });
+
+  it("is a valid form", () => {
+    expect(component.instance().validForm()).toEqual(false);
+    component.find('#form_body').simulate('change', { target: { value: 'Hello World' }});
+    expect(component.instance().validForm()).toEqual(true);
+  });
+
+  it("submits the form", () => {
+    component.find('#form_body').simulate('change', { target: { value: 'Hello World' }});
+    component.find('#submit_comment_form').simulate('click');
+    expect(createMock).toBeCalled();
   });
 });

@@ -29,7 +29,7 @@ export default class UserPage extends React.Component {
   }
 
   fetchUser() {
-    getUserApi(this.props.match.params.user_id)
+    return getUserApi(this.props.match.params.user_id)
       .then((data) => {
         this.setState({
           pageLoaded: true,

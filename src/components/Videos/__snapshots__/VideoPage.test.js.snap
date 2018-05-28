@@ -42,31 +42,37 @@ exports[`class VideoPage extends _react2.default.Component {
     if (this.state.pageLoaded) {
       content =
       _react2.default.createElement(_reactRouterDom.Switch, { __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this },
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id', render: () =>
-          _react2.default.createElement(_.VideoMain, {
+        _react2.default.createElement(_reactRouterDom.Route, {
+          exact: true, path: '/videos/:video_id',
+          render: () => _react2.default.createElement(_.VideoMain, {
             video: this.state.video,
             chat: this.state.chat,
             loggedIn: this.props.loggedIn,
             currentUser: this.props.currentUser,
-            displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 50 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }),
+            displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 51 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 49 }, __self: this }),
 
 
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/videos/:video_id/stats', render: props =>
-          _react2.default.createElement(_.VideoStats, Object.assign({}, props, {
+
+        _react2.default.createElement(_reactRouterDom.Route, {
+          exact: true, path: '/videos/:video_id/stats',
+          render: props => _react2.default.createElement(_.VideoStats, Object.assign({}, props, {
             video: this.state.video,
-            displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 59 }, __self: this })), __source: { fileName: _jsxFileName, lineNumber: 58 }, __self: this }),
+            displayMessage: this.props.displayMessage, __source: { fileName: _jsxFileName, lineNumber: 62 }, __self: this })), __source: { fileName: _jsxFileName, lineNumber: 60 }, __self: this }),
 
 
 
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/videos/:video_id/*', render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 65 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 65 }, __self: this }));
+        _react2.default.createElement(_reactRouterDom.Route, {
+          path: '/videos/:video_id/*',
+          render: () => _react2.default.createElement(_Misc.NothingHere, { __source: { fileName: _jsxFileName, lineNumber: 70 }, __self: this }), __source: { fileName: _jsxFileName, lineNumber: 68 }, __self: this }));
+
 
 
     } else {
-      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 69 }, __self: this });
+      content = _react2.default.createElement(_Misc.PageLoading, { __source: { fileName: _jsxFileName, lineNumber: 75 }, __self: this });
     }
 
     return (
-      _react2.default.createElement('section', { __source: { fileName: _jsxFileName, lineNumber: 73 }, __self: this },
+      _react2.default.createElement('section', { __source: { fileName: _jsxFileName, lineNumber: 79 }, __self: this },
         content));
 
 

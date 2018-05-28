@@ -25,7 +25,7 @@ exports[`class UserPage extends _react2.default.Component {
   }
 
   fetchUser() {
-    (0, _users.getUserApi)(this.props.match.params.user_id).
+    return (0, _users.getUserApi)(this.props.match.params.user_id).
     then(data => {
       this.setState({
         pageLoaded: true,
