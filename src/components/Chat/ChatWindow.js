@@ -32,7 +32,7 @@ export default class ChatWindow extends React.Component {
     if (this._isMounted) {
       return getChatMessagesApi(this.props.chat, this.state.updating)
         .then((data) => {
-          if (data.comments.length > 0) {
+          if (this._isMounted && data.comments.length > 0) {
             this.setState({
               updating: true,
               messages: this.state.messages.concat(data.comments)

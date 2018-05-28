@@ -2,7 +2,7 @@ export default (chatObj, updatingList) => {
   return new Promise((resolve, reject) => {
     const updateQuery = updatingList ? '&updating_list=true' : '';
     const tokenQuery  = chatObj.page_token ? `?pageToken=${chatObj.page_token}${updateQuery}` : '';
-    const path        = `${process.env.REACT_APP_API_URL}/comments/${chatObj.id}${tokenQuery}`;
+    const path        = `${process.env.REACT_APP_API_URL}/chats/${chatObj.id}/comments${tokenQuery}`;
     const request     = new XMLHttpRequest();
 
     request.onreadystatechange = () => {
