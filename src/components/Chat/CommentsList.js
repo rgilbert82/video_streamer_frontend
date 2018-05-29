@@ -3,7 +3,7 @@ import { CommentListItem } from '.';
 
 export default class CommentsList extends React.Component {
   render() {
-    let messages = this.props.messages.map((message) => {
+    const messages = this.props.messages.map((message) => {
       return (
         <li key={message.comment.id} className='commentListItem'>
           <CommentListItem

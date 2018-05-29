@@ -21,7 +21,7 @@ export default class Header extends React.Component {
         <div id='currentUserAvatar'>
           <img
             src={this.props.currentUser.imageUrl}
-            alt={this.props.currentUser.name + ' avatar'}
+            alt={this.props.currentUser.name}
           />
         </div>
       );

@@ -19,9 +19,7 @@ export default class ChatWindow extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-    if (this._isMounted) {
-      this.fetchMessages();
-    }
+    this.fetchMessages();
   }
 
   componentWillUnmount() {
@@ -39,7 +37,7 @@ export default class ChatWindow extends React.Component {
             });
           }
           this.setFetchTimer(data.poll_interval);
-        }).catch((err) => {
+        }).catch(() => {
           this.props.displayMessage('There was an error loading the chat messages.');
         });
     }

@@ -36,7 +36,7 @@ export default class UserPage extends React.Component {
           comments: data.comments,
           user: data.user
         });
-      }).catch((err) => {
+      }).catch(() => {
         this.props.displayMessage('There was an error loading the user');
       });
   }

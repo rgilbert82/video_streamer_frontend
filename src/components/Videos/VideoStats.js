@@ -30,7 +30,7 @@ export default class VideoStats extends React.Component {
     return getVidStatsApi(this.props.video.id)
       .then((data) => {
         this.setState({ pageLoaded: true, stats: data });
-      }).catch((err) => {
+      }).catch(() => {
         this.props.displayMessage('There was an error getting the stats.')
       });
   }
