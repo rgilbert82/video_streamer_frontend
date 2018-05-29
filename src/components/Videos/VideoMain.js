@@ -1,9 +1,11 @@
 import React           from 'react';
+import { Link }        from 'react-router-dom';
 import { ChatWindow }  from '../Chat';
 import { VideoPlayer } from '.';
 
 export default class VideoMain extends React.Component {
   render() {
+    const statsPath = `/videos/${this.props.video.id}/stats`;
     let commentsList;
 
     if (this.props.chat) {
@@ -25,8 +27,14 @@ export default class VideoMain extends React.Component {
 
     return (
       <div>
-        <VideoPlayer video={this.props.video} />
-        { commentsList }
+        <header className='videoHeader'>
+          <h2>{this.props.video.title}</h2>
+          <Link to={statsPath}>video stats</Link>
+        </header>
+        <div>
+          <VideoPlayer video={this.props.video} />
+          { commentsList }
+        </div>
       </div>
     );
   }

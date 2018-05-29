@@ -124,6 +124,12 @@ textarea {
   border-radius: 0;
 }
 
+#headerMain .container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #headerMainLeft {
   float: left;
 }
@@ -196,7 +202,7 @@ textarea {
 
 .videosList {
   margin-top: 30px;
-  margin-right: -4%;
+  margin-right: -2%;
 }
 
 .videoListItem {
@@ -254,6 +260,7 @@ textarea {
 
 .videoHeader {
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .videoHeader h2 {
@@ -296,7 +303,6 @@ textarea {
 }
 
 #videoCommentsList {
-  margin-top: 44px;
   margin-bottom: 15px;
   height: 400px;
   overflow: auto;
@@ -478,6 +484,7 @@ footer p {
 
   #videoCommentsWrapper {
     width: 100%;
+    margin-top: 45px;
   }
 }
 
