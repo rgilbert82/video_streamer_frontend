@@ -12,7 +12,7 @@ export default class CommentListItem extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     const box = document.getElementById('videoCommentsList');
     box.scrollTop = box.scrollHeight - box.clientHeight;
   }
