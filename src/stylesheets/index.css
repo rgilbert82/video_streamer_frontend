@@ -77,6 +77,22 @@ textarea {
   color: rgb(50, 195, 162);
 }
 
+*::-webkit-scrollbar {
+  background-color: #121B20;
+  border-radius: 4px;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-button,
+*::-webkit-scrollbar-thumb {
+  background-color: #2b383f;
+  border-radius: 4px;
+}
+
+/* ========================================================================== */
+/* Message Window */
+/* ========================================================================== */
+
 .message_window {
   position: relative;
   margin: 0 60px;
@@ -99,18 +115,6 @@ textarea {
 
 .message_window a:hover {
   color: rgb(50, 195, 162);
-}
-
-*::-webkit-scrollbar {
-  background-color: #121B20;
-  border-radius: 4px;
-  width: 12px;
-}
-
-*::-webkit-scrollbar-button,
-*::-webkit-scrollbar-thumb {
-  background-color: #2b383f;
-  border-radius: 4px;
 }
 
 /* ========================================================================== */

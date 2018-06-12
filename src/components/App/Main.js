@@ -11,7 +11,9 @@ export default class Main extends React.Component {
         <Switch>
           <Route
             exact path='/'
-            render={ () => <VideosIndex displayMessage={this.props.displayMessage} />
+            render={ () => <VideosIndex
+              displayMessage={this.props.displayMessage}
+            />
           }/>
 
           <Route

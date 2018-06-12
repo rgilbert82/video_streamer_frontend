@@ -33,8 +33,8 @@ export default class UserPage extends React.Component {
       .then((data) => {
         this.setState({
           pageLoaded: true,
-          comments: data.comments,
-          user: data.user
+          comments:   data.comments,
+          user:       data.user
         });
       }).catch(() => {
         this.props.displayMessage('There was an error loading the user');

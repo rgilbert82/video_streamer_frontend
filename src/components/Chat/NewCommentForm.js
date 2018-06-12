@@ -9,22 +9,22 @@ export default class NewCommentForm extends React.Component {
       body: ''
     }
 
-    this.updateBody = this.updateBody.bind(this);
+    this.updateBody    = this.updateBody.bind(this);
     this.createComment = this.createComment.bind(this);
-    this.validForm = this.validForm.bind(this);
+    this.validForm     = this.validForm.bind(this);
   }
 
   updateBody(e) {
     this.setState({ body: e.target.value });
   }
 
+  validForm() {
+    return this.state.body.length > 0;
+  }
+
   createComment() {
     this.props.createNewComment(this.state.body);
     this.setState({ body: '' });
-  }
-
-  validForm() {
-    return this.state.body.length > 0;
   }
 
   render() {

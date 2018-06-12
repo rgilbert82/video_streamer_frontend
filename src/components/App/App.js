@@ -64,7 +64,6 @@ export default class App extends React.Component {
           googleLogin={this.googleLogin}
           googleLogout={this.googleLogout}
           loginFailure={this.loginFailure}
-          displayMessage={this.displayMessage}
         />
 
         { messageBox }

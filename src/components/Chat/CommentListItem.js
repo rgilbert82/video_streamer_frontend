@@ -10,9 +10,15 @@ export default class CommentListItem extends React.Component {
       user:    this.props.message.user,
       comment: this.props.message.comment
     }
+
+    this.scrollParentToBottom = this.scrollParentToBottom.bind(this);
   }
 
   componentDidMount() {
+    this.scrollParentToBottom();
+  }
+
+  scrollParentToBottom() {
     const box = document.getElementById('videoCommentsList');
     box.scrollTop = box.scrollHeight - box.clientHeight;
   }

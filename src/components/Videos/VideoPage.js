@@ -34,7 +34,8 @@ export default class VideoPage extends React.Component {
         this.setState({
           video:      data.video,
           chat:       data.chat,
-          pageLoaded: true });
+          pageLoaded: true
+        });
       }).catch(() => {
         this.props.displayMessage('There was an error loading the video.');
       });
